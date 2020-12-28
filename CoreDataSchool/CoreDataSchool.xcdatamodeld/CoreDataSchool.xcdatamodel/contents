@@ -1,4 +1,34 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="false" userDefinedModelVersionIdentifier="">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17511" systemVersion="19H2" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="City" representedClassName=".City" syncable="YES">
+        <attribute name="title" attributeType="String"/>
+        <relationship name="student" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Student" inverseName="city" inverseEntity="Student"/>
+    </entity>
+    <entity name="Group" representedClassName=".Group" syncable="YES">
+        <attribute name="speciality" attributeType="String"/>
+        <attribute name="title" attributeType="String"/>
+        <relationship name="student" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Student" inverseName="group" inverseEntity="Student"/>
+    </entity>
+    <entity name="Student" representedClassName=".Student" syncable="YES">
+        <attribute name="birthday" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="email" attributeType="String"/>
+        <attribute name="firstname" attributeType="String"/>
+        <attribute name="lastname" attributeType="String"/>
+        <attribute name="sex" attributeType="String"/>
+        <relationship name="city" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="City" inverseName="student" inverseEntity="City"/>
+        <relationship name="group" maxCount="1" deletionRule="Nullify" destinationEntity="Group" inverseName="student" inverseEntity="Group"/>
+    </entity>
+    <entity name="Teacher" representedClassName=".Teacher" syncable="YES">
+        <attribute name="birthday" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="firstname" attributeType="String"/>
+        <attribute name="lastname" attributeType="String"/>
+        <attribute name="salary" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="sex" attributeType="String"/>
+    </entity>
+    <elements>
+        <element name="City" positionX="-54" positionY="27" width="128" height="73"/>
+        <element name="Group" positionX="-18" positionY="72" width="128" height="88"/>
+        <element name="Student" positionX="-36" positionY="36" width="128" height="148"/>
+        <element name="Teacher" positionX="-63" positionY="-18" width="128" height="118"/>
+    </elements>
 </model>
