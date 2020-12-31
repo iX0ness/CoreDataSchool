@@ -7,12 +7,22 @@
 
 import UIKit
 
-class CitiesTableViewController: UITableViewController {
-
+class CitiesViewController: UITableViewController {
+    
+    private let viewModel: CitiesViewModelType
+    
+    init(viewModel: CitiesViewModelType) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
+        tableView.backgroundColor = .white
     }
 
     // MARK: - Table view data source

@@ -13,7 +13,7 @@ protocol MainMenuAssembly {
 
 extension AppDependencyContainer: MainMenuAssembly {
     func makeMainMenuViewController() -> MainMenuViewController {
-        MainMenuViewController(viewModel: makeMainMenuViewModel())
+        MainMenuViewController(viewModel: makeMainMenuViewModel(), assembler: self)
     }
     
     private func makeMainMenuViewModel() -> MainMenuViewModel {

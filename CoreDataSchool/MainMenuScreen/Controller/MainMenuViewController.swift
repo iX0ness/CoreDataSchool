@@ -12,12 +12,15 @@ import CoreData
 class MainMenuViewController: UICollectionViewController {
     
     let viewModel: MainMenuViewModelType
+    let assembler: CitiesAssembly
     
     init(
         viewModel: MainMenuViewModelType,
+        assembler: CitiesAssembly,
         collectionViewLayout layout: UICollectionViewLayout = UICollectionViewFlowLayout()
     ) {
         self.viewModel = viewModel
+        self.assembler = assembler
         super.init(collectionViewLayout: layout)
         collectionView.register(MenuCollectionViewCell.self)
         collectionView.showsVerticalScrollIndicator = false
@@ -29,7 +32,7 @@ class MainMenuViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        collectionView.backgroundColor = UIColor(hexString: "#F5F5F5")
+        collectionView.backgroundColor = UIColor(hexString: ColorPalette.daisyWhite.hex)
         setupNavigationBarAppearance()
     }
 }
@@ -98,14 +101,7 @@ struct VCPreview: PreviewProvider {
     
     struct VCContainerView: UIViewControllerRepresentable {
         func makeUIViewController(context: Context) -> MainMenuViewController {
-            MainMenuViewController(
-                viewModel: MainMenuViewModel(
-                    coreDataStack: MockCoreDataStack(
-                        managedObjectContext: .init(concurrencyType: .mainQueueConcurrencyType
-                        )
-                    )
-                )
-            )
+            MockAppDependencyContainer().makeMainMenuViewController()
         }
         
         func updateUIViewController(_ uiViewController: MainMenuViewController, context: Context) {}
@@ -117,7 +113,5 @@ struct VCPreview: PreviewProvider {
 
 
 
-struct MockCoreDataStack: CoreDataStackType {
-    var managedObjectContext: NSManagedObjectContext
-}
+
 #endif
