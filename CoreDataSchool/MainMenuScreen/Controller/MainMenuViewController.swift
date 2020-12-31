@@ -11,10 +11,10 @@ import CoreData
 
 class MainMenuViewController: UICollectionViewController {
     
-    let viewModel: MainMenuViewModel
+    let viewModel: MainMenuViewModelType
     
     init(
-        viewModel: MainMenuViewModel,
+        viewModel: MainMenuViewModelType,
         collectionViewLayout layout: UICollectionViewLayout = UICollectionViewFlowLayout()
     ) {
         self.viewModel = viewModel
