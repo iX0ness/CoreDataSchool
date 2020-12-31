@@ -8,11 +8,13 @@
 import UIKit
 
 enum ColorPalette {
-    case menuItem
+    case pacificBlue
+    case ashGray
     
     var hex: String {
         switch self {
-        case .menuItem: return "34415E"
+        case .pacificBlue: return "34415E"
+        case .ashGray: return "484848"
         }
     }
 }

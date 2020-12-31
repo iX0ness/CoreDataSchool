@@ -20,6 +20,7 @@ class MainMenuViewController: UICollectionViewController {
         self.viewModel = viewModel
         super.init(collectionViewLayout: layout)
         collectionView.register(MenuCollectionViewCell.self)
+        collectionView.showsVerticalScrollIndicator = false
     }
     
     required init?(coder: NSCoder) {
@@ -36,16 +37,9 @@ class MainMenuViewController: UICollectionViewController {
 extension MainMenuViewController: UICollectionViewDelegateFlowLayout {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: MenuCollectionViewCell = collectionView.dequeueReusableCell(forIndexPath: indexPath)
+        let item = viewModel.outputs.menuItem(at: indexPath)
+        cell.setImage(of: item.asset)
         
-        cell.setOpacity(to: 0.1)
-        cell.setBorderColor(
-            UIColor(
-                red: 72 / 72,
-                green: 72 / 72,
-                blue: 72 / 72,
-                alpha: 1.0)
-        )
-        cell.backgroundColor = .white
         return cell
     }
     
@@ -76,7 +70,7 @@ extension MainMenuViewController: UICollectionViewDelegateFlowLayout {
 
 extension MainMenuViewController {
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return viewModel.outputs.itemsCount
     }
 }
 
@@ -84,10 +78,10 @@ private extension MainMenuViewController {
     func setupNavigationBarAppearance() {
         let appearance = UINavigationBarAppearance()
         appearance.titleTextAttributes = [
-            .foregroundColor: UIColor(hexString: ColorPalette.menuItem.hex)
+            .foregroundColor: UIColor(hexString: ColorPalette.pacificBlue.hex)
         ]
         appearance.largeTitleTextAttributes = [
-            .foregroundColor: UIColor(hexString: ColorPalette.menuItem.hex)
+            .foregroundColor: UIColor(hexString: ColorPalette.pacificBlue.hex)
         ]
         navigationItem.standardAppearance = appearance
         navigationItem.scrollEdgeAppearance = appearance
@@ -100,9 +94,7 @@ private extension MainMenuViewController {
 #if DEBUG
 struct VCPreview: PreviewProvider {
     
-    static var previews: some View {
-        VCContainerView()
-    }
+    static var previews: some View { VCContainerView() }
     
     struct VCContainerView: UIViewControllerRepresentable {
         func makeUIViewController(context: Context) -> MainMenuViewController {
@@ -116,9 +108,7 @@ struct VCPreview: PreviewProvider {
             )
         }
         
-        func updateUIViewController(_ uiViewController: MainMenuViewController, context: Context) {
-            
-        }
+        func updateUIViewController(_ uiViewController: MainMenuViewController, context: Context) {}
         typealias UIViewControllerType = MainMenuViewController
     }
     
