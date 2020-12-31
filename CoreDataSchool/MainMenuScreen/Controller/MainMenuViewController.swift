@@ -28,15 +28,23 @@ class MainMenuViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        collectionView.backgroundColor = .white
-        title = "Home"
-        navigationController?.navigationItem.largeTitleDisplayMode = .automatic
+        collectionView.backgroundColor = UIColor(hexString: "#F5F5F5")
+        setupNavigationBarAppearance()
     }
 }
 
 extension MainMenuViewController: UICollectionViewDelegateFlowLayout {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: MenuCollectionViewCell = collectionView.dequeueReusableCell(forIndexPath: indexPath)
+        
+        cell.setOpacity(to: 0.1)
+        cell.setBorderColor(
+            UIColor(
+                red: 72 / 72,
+                green: 72 / 72,
+                blue: 72 / 72,
+                alpha: 1.0)
+        )
         cell.backgroundColor = .white
         return cell
     }
@@ -70,8 +78,24 @@ extension MainMenuViewController {
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 5
     }
-    
 }
+
+private extension MainMenuViewController {
+    func setupNavigationBarAppearance() {
+        let appearance = UINavigationBarAppearance()
+        appearance.titleTextAttributes = [
+            .foregroundColor: UIColor(hexString: ColorPalette.menuItem.hex)
+        ]
+        appearance.largeTitleTextAttributes = [
+            .foregroundColor: UIColor(hexString: ColorPalette.menuItem.hex)
+        ]
+        navigationItem.standardAppearance = appearance
+        navigationItem.scrollEdgeAppearance = appearance
+        title = "Home"
+    }
+}
+
+
 
 #if DEBUG
 struct VCPreview: PreviewProvider {

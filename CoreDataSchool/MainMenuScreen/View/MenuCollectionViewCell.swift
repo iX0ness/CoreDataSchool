@@ -10,8 +10,11 @@ import UIKit
 class MenuCollectionViewCell: UICollectionViewCell {
     
     private lazy var imageView: UIImageView = {
-        let imageView = UIImageView(
-            image: UIImage(named: "student"))
+        let config = UIImage.SymbolConfiguration(pointSize: UIFont.systemFontSize, weight: .bold, scale: .large)
+        let image = UIImage(
+            systemName: "graduationcap", withConfiguration: config)
+        let imageView = UIImageView(image: image)
+        imageView.tintColor = UIColor(hexString: "#34415E")
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
@@ -21,6 +24,7 @@ class MenuCollectionViewCell: UICollectionViewCell {
         constructHierarchy()
         activateConstraints()
         setupRoundedCorners()
+        
     }
     
     required init?(coder: NSCoder) {
@@ -35,6 +39,14 @@ class MenuCollectionViewCell: UICollectionViewCell {
         ).cgPath
     }
     
+    func setOpacity(to value: Float) {
+        layer.shadowOpacity = value
+    }
+    
+    func setBorderColor(_ color: UIColor) {
+        contentView.layer.borderColor = color.cgColor
+    }
+    
     
 }
 
@@ -47,6 +59,10 @@ private extension MenuCollectionViewCell {
         contentView.layer.cornerRadius = 10
         contentView.layer.masksToBounds = true
         
+        
+        contentView.layer.borderWidth = 1
+//        contentView.layer.borderColor = UIColor.red.cgColor
+        
         // Set masks to bounds to false to avoid the shadow
         // from being clipped to the corner radius
         layer.cornerRadius = 10
@@ -54,9 +70,9 @@ private extension MenuCollectionViewCell {
         
         // Apply a shadow
         layer.shadowRadius = 8.0
-        layer.shadowOpacity = 0.10
+//        layer.shadowOpacity = 0.30
         layer.shadowColor = UIColor.black.cgColor
-        layer.shadowOffset = CGSize(width: 0, height: 5)
+        layer.shadowOffset = CGSize(width: 0, height: 10)
     }
     
     func activateConstraints() {

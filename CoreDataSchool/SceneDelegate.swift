@@ -15,7 +15,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         return container
     }()
     
-    
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
@@ -24,9 +23,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: winScene)
         let rootViewController = UINavigationController(rootViewController: depandencyContainer.makeMainMenuViewController())
         rootViewController.navigationBar.prefersLargeTitles = true
+        
         window?.rootViewController = rootViewController
         window?.makeKeyAndVisible()
     }
+    
+//    private func setupNavBarAppearance() {
+//        UINavigationBar.appearance().barTintColor = UIColor(hexString: ColorPalette.menuItem.hex)
+//        UINavigationBar.appearance().tintColor = UIColor.white
+//        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
+//    }
 }
 
 func sceneDidDisconnect(_ scene: UIScene) {
