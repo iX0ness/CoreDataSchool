@@ -22,9 +22,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let winScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: winScene)
-        let rootViewController = UINavigationController(rootViewController: depandencyContainer.makeStartViewController())
+        let rootViewController = UINavigationController(rootViewController: depandencyContainer.makeMainMenuViewController())
+        rootViewController.navigationBar.prefersLargeTitles = true
         window?.rootViewController = rootViewController
-        window?.makeKeyAndVisible() }
+        window?.makeKeyAndVisible()
+    }
 }
 
 func sceneDidDisconnect(_ scene: UIScene) {

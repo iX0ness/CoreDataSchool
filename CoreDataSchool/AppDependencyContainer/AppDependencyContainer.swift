@@ -5,7 +5,7 @@
 //  Created by Mykhaylo Levchuk on 27/12/2020.
 //
 
-import Foundation
+import UIKit
 
 class AppDependencyContainer {
     
@@ -14,8 +14,5 @@ class AppDependencyContainer {
         return coreDataStack
     }()
     
-    func makeStartViewController() -> ViewController {
-        let viewController = ViewController(coreDataStack: coreDataStack)
-        return viewController
-    }
+    
 }
