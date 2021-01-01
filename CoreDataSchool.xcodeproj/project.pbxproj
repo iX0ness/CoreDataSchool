@@ -104,11 +104,10 @@
 		520BD97925990F7200659295 /* CoreDataSchool */ = {
 			isa = PBXGroup;
 			children = (
+				5253E003259F6E490044F603 /* Screens */,
 				5253DFFE259E8FBF0044F603 /* PreviewMocks */,
-				52319E51259E8A6300B8EEC5 /* CitiesScreen */,
 				52BDF654259D0E4F00E129CA /* Extensions */,
 				52914650259CEBF700E0F253 /* AppDependencyContainer */,
-				528C5C0A259CE9A6002D0BFE /* MainMenuScreen */,
 				520BD9A425991AB300659295 /* CoreData */,
 				520BD97A25990F7200659295 /* AppDelegate.swift */,
 				520BD97C25990F7200659295 /* SceneDelegate.swift */,
@@ -178,6 +177,15 @@
 				5253DFFF259E8FD30044F603 /* PreviewMocks.swift */,
 			);
 			path = PreviewMocks;
+			sourceTree = "<group>";
+		};
+		5253E003259F6E490044F603 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				528C5C0A259CE9A6002D0BFE /* MainMenuScreen */,
+				52319E51259E8A6300B8EEC5 /* CitiesScreen */,
+			);
+			path = Screens;
 			sourceTree = "<group>";
 		};
 		528C5C0A259CE9A6002D0BFE /* MainMenuScreen */ = {

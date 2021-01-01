@@ -8,19 +8,18 @@
 import UIKit
 import SwiftUI
 import CoreData
+import Combine
 
 class MainMenuViewController: UICollectionViewController {
     
     let viewModel: MainMenuViewModelType
-    let assembler: CitiesAssembly
+    private var subscriptions = Set<AnyCancellable>()
     
     init(
         viewModel: MainMenuViewModelType,
-        assembler: CitiesAssembly,
         collectionViewLayout layout: UICollectionViewLayout = UICollectionViewFlowLayout()
     ) {
         self.viewModel = viewModel
-        self.assembler = assembler
         super.init(collectionViewLayout: layout)
         collectionView.register(MenuCollectionViewCell.self)
         collectionView.showsVerticalScrollIndicator = false
@@ -34,6 +33,7 @@ class MainMenuViewController: UICollectionViewController {
         super.viewDidLoad()
         collectionView.backgroundColor = UIColor(hexString: ColorPalette.daisyWhite.hex)
         setupNavigationBarAppearance()
+        bind()
     }
 }
 
@@ -69,6 +69,10 @@ extension MainMenuViewController: UICollectionViewDelegateFlowLayout {
             right: 24
         )
     }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        viewModel.inputs.pushViewController(at: indexPath)
+    }
 }
 
 extension MainMenuViewController {
@@ -90,6 +94,15 @@ private extension MainMenuViewController {
         navigationItem.scrollEdgeAppearance = appearance
         title = "Home"
     }
+    
+    func bind() {
+        viewModel.outputs.navigationTransition.sink { transition in
+            self.navigationController?.pushViewController(
+                transition(),
+                animated: true
+            )
+        }.store(in: &subscriptions)
+    }
 }
 
 
@@ -109,9 +122,4 @@ struct VCPreview: PreviewProvider {
     }
     
 }
-
-
-
-
-
 #endif

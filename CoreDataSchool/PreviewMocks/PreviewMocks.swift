@@ -20,8 +20,10 @@ struct MockAppDependencyContainer: MainMenuAssembly,
     
     func makeMainMenuViewController() -> MainMenuViewController {
         MainMenuViewController(
-            viewModel: MainMenuViewModel(coreDataStack: mockCoreDataStack),
-            assembler: self
+            viewModel: MainMenuViewModel(
+                coreDataStack: mockCoreDataStack,
+                assembler: self
+            )
         )
     }
     

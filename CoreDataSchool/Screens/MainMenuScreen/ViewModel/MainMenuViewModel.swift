@@ -5,16 +5,20 @@
 //  Created by Mykhaylo Levchuk on 30/12/2020.
 //
 
-import Foundation
+import UIKit
+import Combine
 
 protocol MainMenuViewModelType {
     var inputs: MainMenuViewModelInputs { get }
     var outputs: MainMenuViewModelOutputs { get }
 }
 
-protocol MainMenuViewModelInputs {}
+protocol MainMenuViewModelInputs {
+    func pushViewController(at indexPath: IndexPath) 
+}
 
 protocol  MainMenuViewModelOutputs {
+    var navigationTransition: PassthroughSubject<() -> UIViewController, Never> { get }
     var itemsCount: Int { get }
     func menuItem(at indexPath: IndexPath) -> MenuItem
 }
@@ -24,16 +28,29 @@ class MainMenuViewModel: MainMenuViewModelType,
                          MainMenuViewModelInputs,
                          MainMenuViewModelOutputs {
     
+    let navigationTransition: PassthroughSubject<() -> UIViewController, Never> = PassthroughSubject()
     var itemsCount: Int { items.count }
     
-    init(coreDataStack: CoreDataStackType) {
+    init(coreDataStack: CoreDataStackType, assembler: CitiesAssembly) {
         self.coreDataStack = coreDataStack
+        self.assembler = assembler
     }
 
     func menuItem(at indexPath: IndexPath) -> MenuItem {
         items[indexPath.row]
     }
     
+    func pushViewController(at indexPath: IndexPath) {
+        switch indexPath.row {
+        case 2:
+            navigationTransition.send(
+                assembler.makeCitiesViewController
+            )
+        default: break
+        }
+    }
+    
+    private let assembler: CitiesAssembly
     private let coreDataStack: CoreDataStackType
     private let items = [
         MenuItem(asset: ImageAssets.students.assetTitle),
