@@ -11,10 +11,7 @@ import CoreData
 import Combine
 
 class MainMenuViewController: UICollectionViewController {
-    
-    let viewModel: MainMenuViewModelType
-    private var subscriptions = Set<AnyCancellable>()
-    
+
     init(
         viewModel: MainMenuViewModelType,
         collectionViewLayout layout: UICollectionViewLayout = UICollectionViewFlowLayout()
@@ -35,6 +32,9 @@ class MainMenuViewController: UICollectionViewController {
         setupNavigationBarAppearance()
         bind()
     }
+    
+    private let viewModel: MainMenuViewModelType
+    private var subscriptions = Set<AnyCancellable>()
 }
 
 extension MainMenuViewController: UICollectionViewDelegateFlowLayout {
@@ -104,8 +104,6 @@ private extension MainMenuViewController {
         }.store(in: &subscriptions)
     }
 }
-
-
 
 #if DEBUG
 struct VCPreview: PreviewProvider {

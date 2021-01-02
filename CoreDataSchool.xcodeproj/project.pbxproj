@@ -37,6 +37,9 @@
 		52C7873E2599318D001F5B68 /* City+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C787362599318D001F5B68 /* City+CoreDataProperties.swift */; };
 		52C7873F2599318D001F5B68 /* Teacher+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C787372599318D001F5B68 /* Teacher+CoreDataClass.swift */; };
 		52C787402599318D001F5B68 /* Teacher+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C787382599318D001F5B68 /* Teacher+CoreDataProperties.swift */; };
+		52EBA2E8259F9FA500B77C10 /* MockCity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EBA2E7259F9FA500B77C10 /* MockCity.swift */; };
+		52EBA2ED259FA3FA00B77C10 /* CityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EBA2EC259FA3FA00B77C10 /* CityTableViewCell.swift */; };
+		52EBA2F025A0C46D00B77C10 /* InputFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EBA2EF25A0C46D00B77C10 /* InputFormViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +75,9 @@
 		52C787362599318D001F5B68 /* City+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "City+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		52C787372599318D001F5B68 /* Teacher+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Teacher+CoreDataClass.swift"; sourceTree = "<group>"; };
 		52C787382599318D001F5B68 /* Teacher+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Teacher+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		52EBA2E7259F9FA500B77C10 /* MockCity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCity.swift; sourceTree = "<group>"; };
+		52EBA2EC259FA3FA00B77C10 /* CityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityTableViewCell.swift; sourceTree = "<group>"; };
+		52EBA2EF25A0C46D00B77C10 /* InputFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputFormViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +147,8 @@
 		52319E51259E8A6300B8EEC5 /* CitiesScreen */ = {
 			isa = PBXGroup;
 			children = (
+				52EBA2EB259FA3AB00B77C10 /* View */,
+				52EBA2E6259F9F9400B77C10 /* Model */,
 				52319E53259E8A7000B8EEC5 /* Controller */,
 				52319E52259E8A6A00B8EEC5 /* ViewModel */,
 			);
@@ -182,6 +190,7 @@
 		5253E003259F6E490044F603 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				52EBA2F225A0C47400B77C10 /* InputFormScreen */,
 				528C5C0A259CE9A6002D0BFE /* MainMenuScreen */,
 				52319E51259E8A6300B8EEC5 /* CitiesScreen */,
 			);
@@ -291,6 +300,30 @@
 			path = Entities;
 			sourceTree = "<group>";
 		};
+		52EBA2E6259F9F9400B77C10 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				52EBA2E7259F9FA500B77C10 /* MockCity.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		52EBA2EB259FA3AB00B77C10 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				52EBA2EC259FA3FA00B77C10 /* CityTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		52EBA2F225A0C47400B77C10 /* InputFormScreen */ = {
+			isa = PBXGroup;
+			children = (
+				52EBA2EF25A0C46D00B77C10 /* InputFormViewController.swift */,
+			);
+			path = InputFormScreen;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -362,6 +395,7 @@
 			files = (
 				520BD97F25990F7200659295 /* MainMenuViewController.swift in Sources */,
 				52BDF662259D168800E129CA /* UITableView+DequeueReusableCell.swift in Sources */,
+				52EBA2F025A0C46D00B77C10 /* InputFormViewController.swift in Sources */,
 				5253DFFC259E8DE40044F603 /* AppDependencyContainer+CitiesAssembly.swift in Sources */,
 				52BDF657259D12A700E129CA /* UIView+ReusableView.swift in Sources */,
 				52319E5A259E8CDB00B8EEC5 /* CitiesViewModel.swift in Sources */,
@@ -372,6 +406,7 @@
 				521D4254259E42980079D68A /* UIColor+HEX.swift in Sources */,
 				521D425A259E6BD70079D68A /* ImageAssets.swift in Sources */,
 				520BD98525990F7200659295 /* CoreDataSchool.xcdatamodeld in Sources */,
+				52EBA2ED259FA3FA00B77C10 /* CityTableViewCell.swift in Sources */,
 				52C7873F2599318D001F5B68 /* Teacher+CoreDataClass.swift in Sources */,
 				52BDF65E259D15D900E129CA /* UICollectionView+DequeueReusableCell.swift in Sources */,
 				528C5C14259CEB11002D0BFE /* MainMenuViewModel.swift in Sources */,
@@ -380,6 +415,7 @@
 				52C787402599318D001F5B68 /* Teacher+CoreDataProperties.swift in Sources */,
 				52C7872725992425001F5B68 /* CoreDataStack.swift in Sources */,
 				52C7873C2599318D001F5B68 /* Group+CoreDataProperties.swift in Sources */,
+				52EBA2E8259F9FA500B77C10 /* MockCity.swift in Sources */,
 				52C7872D25992778001F5B68 /* AppDependencyContainer.swift in Sources */,
 				520BD97D25990F7200659295 /* SceneDelegate.swift in Sources */,
 				52C7873D2599318D001F5B68 /* City+CoreDataClass.swift in Sources */,
