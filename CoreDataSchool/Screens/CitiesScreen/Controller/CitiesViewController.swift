@@ -31,15 +31,16 @@ class CitiesViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setupNavigationBarAppearance()
+        
     }
-
+    
     // MARK: - Table view data source
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return viewModel.outputs.count
     }
-
+    
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: CityTableViewCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
@@ -60,11 +61,22 @@ class CitiesViewController: UITableViewController {
         navigationItem.standardAppearance = appearance
         navigationItem.scrollEdgeAppearance = appearance
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(systemItem: .add)
+        let addBarButtonItem = UIBarButtonItem(systemItem: .add)
+        addBarButtonItem.target = self
+        addBarButtonItem.action = #selector(showInputFormViewController)
+        navigationItem.rightBarButtonItem = addBarButtonItem
         navigationController?.navigationBar.tintColor = UIColor(hexString: ColorPalette.pacificBlue.hex)
         title = "Cities"
     }
-
+    
+    @objc func showInputFormViewController() {
+        let vc = InputViewController(
+            textFieldsPlaceholders: ["First name",
+                                     "Last name",
+            ])
+        self.present(vc, animated: true)
+    }
+    
 }
 
 #if DEBUG
