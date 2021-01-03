@@ -3,7 +3,7 @@
     <entity name="City" representedClassName=".City" syncable="YES">
         <attribute name="country" optional="YES" attributeType="String"/>
         <attribute name="title" attributeType="String"/>
-        <relationship name="student" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Student" inverseName="city" inverseEntity="Student"/>
+        <relationship name="student" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Student" inverseName="city" inverseEntity="Student"/>
     </entity>
     <entity name="Group" representedClassName=".Group" syncable="YES">
         <attribute name="speciality" attributeType="String"/>

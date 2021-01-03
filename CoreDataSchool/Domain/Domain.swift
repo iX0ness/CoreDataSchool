@@ -1,15 +1,10 @@
 //
-//  Group+CoreDataClass.swift
+//  Domain.swift
 //  CoreDataSchool
 //
 //  Created by Mykhaylo Levchuk on 03/01/2021.
 //
-//
 
 import Foundation
-import CoreData
 
-
-public class Group: NSManagedObject {
-
-}
+enum Domain {}

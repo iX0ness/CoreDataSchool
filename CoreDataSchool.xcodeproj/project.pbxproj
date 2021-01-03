@@ -30,14 +30,19 @@
 		52BDF662259D168800E129CA /* UITableView+DequeueReusableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BDF661259D168800E129CA /* UITableView+DequeueReusableCell.swift */; };
 		52C7872725992425001F5B68 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C7872625992425001F5B68 /* CoreDataStack.swift */; };
 		52C7872D25992778001F5B68 /* AppDependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C7872C25992778001F5B68 /* AppDependencyContainer.swift */; };
-		52C787392599318D001F5B68 /* Student+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C787312599318D001F5B68 /* Student+CoreDataClass.swift */; };
-		52C7873A2599318D001F5B68 /* Student+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C787322599318D001F5B68 /* Student+CoreDataProperties.swift */; };
-		52C7873B2599318D001F5B68 /* Group+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C787332599318D001F5B68 /* Group+CoreDataClass.swift */; };
-		52C7873C2599318D001F5B68 /* Group+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C787342599318D001F5B68 /* Group+CoreDataProperties.swift */; };
-		52C7873D2599318D001F5B68 /* City+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C787352599318D001F5B68 /* City+CoreDataClass.swift */; };
-		52C7873E2599318D001F5B68 /* City+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C787362599318D001F5B68 /* City+CoreDataProperties.swift */; };
-		52C7873F2599318D001F5B68 /* Teacher+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C787372599318D001F5B68 /* Teacher+CoreDataClass.swift */; };
-		52C787402599318D001F5B68 /* Teacher+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C787382599318D001F5B68 /* Teacher+CoreDataProperties.swift */; };
+		52D94DF725A2505D000D291B /* Domain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D94DF625A2505D000D291B /* Domain.swift */; };
+		52D94DFA25A25071000D291B /* Domain+City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D94DF925A25071000D291B /* Domain+City.swift */; };
+		52D94DFD25A250F4000D291B /* Domain+Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D94DFC25A250F4000D291B /* Domain+Student.swift */; };
+		52D94E0025A2514A000D291B /* Domain+Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D94DFF25A2514A000D291B /* Domain+Group.swift */; };
+		52D94E0B25A251FC000D291B /* City+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D94E0325A251FC000D291B /* City+CoreDataClass.swift */; };
+		52D94E0C25A251FC000D291B /* City+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D94E0425A251FC000D291B /* City+CoreDataProperties.swift */; };
+		52D94E0D25A251FC000D291B /* Student+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D94E0525A251FC000D291B /* Student+CoreDataClass.swift */; };
+		52D94E0E25A251FC000D291B /* Student+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D94E0625A251FC000D291B /* Student+CoreDataProperties.swift */; };
+		52D94E0F25A251FC000D291B /* Teacher+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D94E0725A251FC000D291B /* Teacher+CoreDataClass.swift */; };
+		52D94E1025A251FC000D291B /* Teacher+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D94E0825A251FC000D291B /* Teacher+CoreDataProperties.swift */; };
+		52D94E1125A251FC000D291B /* Group+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D94E0925A251FC000D291B /* Group+CoreDataClass.swift */; };
+		52D94E1225A251FC000D291B /* Group+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D94E0A25A251FC000D291B /* Group+CoreDataProperties.swift */; };
+		52D94E1C25A25301000D291B /* Domain+OutputObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D94E1B25A25301000D291B /* Domain+OutputObject.swift */; };
 		52EBA2E8259F9FA500B77C10 /* MockCity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EBA2E7259F9FA500B77C10 /* MockCity.swift */; };
 		52EBA2ED259FA3FA00B77C10 /* CityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EBA2EC259FA3FA00B77C10 /* CityTableViewCell.swift */; };
 		52EBA2F025A0C46D00B77C10 /* InputFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EBA2EF25A0C46D00B77C10 /* InputFormViewController.swift */; };
@@ -71,14 +76,19 @@
 		52BDF661259D168800E129CA /* UITableView+DequeueReusableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+DequeueReusableCell.swift"; sourceTree = "<group>"; };
 		52C7872625992425001F5B68 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		52C7872C25992778001F5B68 /* AppDependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDependencyContainer.swift; sourceTree = "<group>"; };
-		52C787312599318D001F5B68 /* Student+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Student+CoreDataClass.swift"; sourceTree = "<group>"; };
-		52C787322599318D001F5B68 /* Student+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Student+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		52C787332599318D001F5B68 /* Group+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Group+CoreDataClass.swift"; sourceTree = "<group>"; };
-		52C787342599318D001F5B68 /* Group+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Group+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		52C787352599318D001F5B68 /* City+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "City+CoreDataClass.swift"; sourceTree = "<group>"; };
-		52C787362599318D001F5B68 /* City+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "City+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		52C787372599318D001F5B68 /* Teacher+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Teacher+CoreDataClass.swift"; sourceTree = "<group>"; };
-		52C787382599318D001F5B68 /* Teacher+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Teacher+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		52D94DF625A2505D000D291B /* Domain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Domain.swift; sourceTree = "<group>"; };
+		52D94DF925A25071000D291B /* Domain+City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Domain+City.swift"; sourceTree = "<group>"; };
+		52D94DFC25A250F4000D291B /* Domain+Student.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Domain+Student.swift"; sourceTree = "<group>"; };
+		52D94DFF25A2514A000D291B /* Domain+Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Domain+Group.swift"; sourceTree = "<group>"; };
+		52D94E0325A251FC000D291B /* City+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "City+CoreDataClass.swift"; sourceTree = "<group>"; };
+		52D94E0425A251FC000D291B /* City+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "City+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		52D94E0525A251FC000D291B /* Student+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Student+CoreDataClass.swift"; sourceTree = "<group>"; };
+		52D94E0625A251FC000D291B /* Student+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Student+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		52D94E0725A251FC000D291B /* Teacher+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Teacher+CoreDataClass.swift"; sourceTree = "<group>"; };
+		52D94E0825A251FC000D291B /* Teacher+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Teacher+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		52D94E0925A251FC000D291B /* Group+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Group+CoreDataClass.swift"; sourceTree = "<group>"; };
+		52D94E0A25A251FC000D291B /* Group+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Group+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		52D94E1B25A25301000D291B /* Domain+OutputObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Domain+OutputObject.swift"; sourceTree = "<group>"; };
 		52EBA2E7259F9FA500B77C10 /* MockCity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCity.swift; sourceTree = "<group>"; };
 		52EBA2EC259FA3FA00B77C10 /* CityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityTableViewCell.swift; sourceTree = "<group>"; };
 		52EBA2EF25A0C46D00B77C10 /* InputFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputFormViewController.swift; sourceTree = "<group>"; };
@@ -116,6 +126,7 @@
 		520BD97925990F7200659295 /* CoreDataSchool */ = {
 			isa = PBXGroup;
 			children = (
+				52D94DF525A25048000D291B /* Domain */,
 				5253E003259F6E490044F603 /* Screens */,
 				5253DFFE259E8FBF0044F603 /* PreviewMocks */,
 				52BDF654259D0E4F00E129CA /* Extensions */,
@@ -303,16 +314,28 @@
 		52C7872525992408001F5B68 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				52C787312599318D001F5B68 /* Student+CoreDataClass.swift */,
-				52C787322599318D001F5B68 /* Student+CoreDataProperties.swift */,
-				52C787332599318D001F5B68 /* Group+CoreDataClass.swift */,
-				52C787342599318D001F5B68 /* Group+CoreDataProperties.swift */,
-				52C787352599318D001F5B68 /* City+CoreDataClass.swift */,
-				52C787362599318D001F5B68 /* City+CoreDataProperties.swift */,
-				52C787372599318D001F5B68 /* Teacher+CoreDataClass.swift */,
-				52C787382599318D001F5B68 /* Teacher+CoreDataProperties.swift */,
+				52D94E0325A251FC000D291B /* City+CoreDataClass.swift */,
+				52D94E0425A251FC000D291B /* City+CoreDataProperties.swift */,
+				52D94E0525A251FC000D291B /* Student+CoreDataClass.swift */,
+				52D94E0625A251FC000D291B /* Student+CoreDataProperties.swift */,
+				52D94E0725A251FC000D291B /* Teacher+CoreDataClass.swift */,
+				52D94E0825A251FC000D291B /* Teacher+CoreDataProperties.swift */,
+				52D94E0925A251FC000D291B /* Group+CoreDataClass.swift */,
+				52D94E0A25A251FC000D291B /* Group+CoreDataProperties.swift */,
 			);
 			path = Entities;
+			sourceTree = "<group>";
+		};
+		52D94DF525A25048000D291B /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				52D94DF625A2505D000D291B /* Domain.swift */,
+				52D94DF925A25071000D291B /* Domain+City.swift */,
+				52D94DFC25A250F4000D291B /* Domain+Student.swift */,
+				52D94DFF25A2514A000D291B /* Domain+Group.swift */,
+				52D94E1B25A25301000D291B /* Domain+OutputObject.swift */,
+			);
+			path = Domain;
 			sourceTree = "<group>";
 		};
 		52EBA2E6259F9F9400B77C10 /* Model */ = {
@@ -412,36 +435,41 @@
 			files = (
 				524C697325A2464400839F06 /* UIControl+Publisher.swift in Sources */,
 				520BD97F25990F7200659295 /* MainMenuViewController.swift in Sources */,
+				52D94E1125A251FC000D291B /* Group+CoreDataClass.swift in Sources */,
 				52BDF662259D168800E129CA /* UITableView+DequeueReusableCell.swift in Sources */,
 				52EBA30125A2265000B77C10 /* SaveButtonCollectionViewCell.swift in Sources */,
 				52EBA2F025A0C46D00B77C10 /* InputFormViewController.swift in Sources */,
 				5253DFFC259E8DE40044F603 /* AppDependencyContainer+CitiesAssembly.swift in Sources */,
+				52D94DF725A2505D000D291B /* Domain.swift in Sources */,
+				52D94E0D25A251FC000D291B /* Student+CoreDataClass.swift in Sources */,
 				52BDF657259D12A700E129CA /* UIView+ReusableView.swift in Sources */,
+				52D94DFA25A25071000D291B /* Domain+City.swift in Sources */,
 				52319E5A259E8CDB00B8EEC5 /* CitiesViewModel.swift in Sources */,
-				52C7873B2599318D001F5B68 /* Group+CoreDataClass.swift in Sources */,
 				520BD97B25990F7200659295 /* AppDelegate.swift in Sources */,
-				52C7873A2599318D001F5B68 /* Student+CoreDataProperties.swift in Sources */,
-				52C7873E2599318D001F5B68 /* City+CoreDataProperties.swift in Sources */,
+				52D94E1C25A25301000D291B /* Domain+OutputObject.swift in Sources */,
+				52D94E0F25A251FC000D291B /* Teacher+CoreDataClass.swift in Sources */,
 				521D4254259E42980079D68A /* UIColor+HEX.swift in Sources */,
+				52D94E0C25A251FC000D291B /* City+CoreDataProperties.swift in Sources */,
 				521D425A259E6BD70079D68A /* ImageAssets.swift in Sources */,
 				520BD98525990F7200659295 /* CoreDataSchool.xcdatamodeld in Sources */,
 				52EBA2ED259FA3FA00B77C10 /* CityTableViewCell.swift in Sources */,
-				52C7873F2599318D001F5B68 /* Teacher+CoreDataClass.swift in Sources */,
 				52EBA2F725A10A0E00B77C10 /* InputCollectionViewCell.swift in Sources */,
 				52BDF65E259D15D900E129CA /* UICollectionView+DequeueReusableCell.swift in Sources */,
 				528C5C14259CEB11002D0BFE /* MainMenuViewModel.swift in Sources */,
-				52C787392599318D001F5B68 /* Student+CoreDataClass.swift in Sources */,
 				52BDF651259CEF5300E129CA /* MenuCollectionViewCell.swift in Sources */,
-				52C787402599318D001F5B68 /* Teacher+CoreDataProperties.swift in Sources */,
 				52C7872725992425001F5B68 /* CoreDataStack.swift in Sources */,
-				52C7873C2599318D001F5B68 /* Group+CoreDataProperties.swift in Sources */,
+				52D94DFD25A250F4000D291B /* Domain+Student.swift in Sources */,
+				52D94E1025A251FC000D291B /* Teacher+CoreDataProperties.swift in Sources */,
 				52EBA2E8259F9FA500B77C10 /* MockCity.swift in Sources */,
+				52D94E0E25A251FC000D291B /* Student+CoreDataProperties.swift in Sources */,
 				52C7872D25992778001F5B68 /* AppDependencyContainer.swift in Sources */,
 				520BD97D25990F7200659295 /* SceneDelegate.swift in Sources */,
-				52C7873D2599318D001F5B68 /* City+CoreDataClass.swift in Sources */,
+				52D94E0B25A251FC000D291B /* City+CoreDataClass.swift in Sources */,
+				52D94E1225A251FC000D291B /* Group+CoreDataProperties.swift in Sources */,
 				52319E55259E8C3700B8EEC5 /* CitiesViewController.swift in Sources */,
 				5253E000259E8FD30044F603 /* PreviewMocks.swift in Sources */,
 				521D425E259E74D50079D68A /* MenuItem.swift in Sources */,
+				52D94E0025A2514A000D291B /* Domain+Group.swift in Sources */,
 				52914653259CEC4200E0F253 /* AppDependencyContainer+MainMenuAssembly.swift in Sources */,
 				521D4257259E57F30079D68A /* ColorPalette.swift in Sources */,
 			);

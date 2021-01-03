@@ -124,15 +124,12 @@ extension InputFormViewController: UICollectionViewDataSource,
             
         return UIEdgeInsets(top: 16, left: 0, bottom: 0, right: 0)
     }
-    
-    
 }
 
 final class InputViewController: UINavigationController {
     
     convenience init(textFieldsPlaceholders: [String]) {
         self.init(rootViewController: InputFormViewController(textFieldsPlaceholders: textFieldsPlaceholders))
-        
     }
     
     override init(rootViewController: UIViewController) {

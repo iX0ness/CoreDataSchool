@@ -31,13 +31,11 @@ class CitiesViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setupNavigationBarAppearance()
-        
     }
     
     // MARK: - Table view data source
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return viewModel.outputs.count
     }
     
@@ -71,9 +69,7 @@ class CitiesViewController: UITableViewController {
     
     @objc func showInputFormViewController() {
         let vc = InputViewController(
-            textFieldsPlaceholders: ["First name",
-                                     "Last name",
-            ])
+            textFieldsPlaceholders: ["Title"])
         self.present(vc, animated: true)
     }
     

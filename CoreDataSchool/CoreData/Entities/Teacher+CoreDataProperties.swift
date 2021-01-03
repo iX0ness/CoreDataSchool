@@ -2,7 +2,7 @@
 //  Teacher+CoreDataProperties.swift
 //  CoreDataSchool
 //
-//  Created by Mykhaylo Levchuk on 27/12/2020.
+//  Created by Mykhaylo Levchuk on 03/01/2021.
 //
 //
 
