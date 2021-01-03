@@ -19,6 +19,7 @@
 		521D425E259E74D50079D68A /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521D425D259E74D50079D68A /* MenuItem.swift */; };
 		52319E55259E8C3700B8EEC5 /* CitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52319E54259E8C3700B8EEC5 /* CitiesViewController.swift */; };
 		52319E5A259E8CDB00B8EEC5 /* CitiesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52319E59259E8CDB00B8EEC5 /* CitiesViewModel.swift */; };
+		524C697325A2464400839F06 /* UIControl+Publisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524C697225A2464400839F06 /* UIControl+Publisher.swift */; };
 		5253DFFC259E8DE40044F603 /* AppDependencyContainer+CitiesAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5253DFFB259E8DE40044F603 /* AppDependencyContainer+CitiesAssembly.swift */; };
 		5253E000259E8FD30044F603 /* PreviewMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5253DFFF259E8FD30044F603 /* PreviewMocks.swift */; };
 		528C5C14259CEB11002D0BFE /* MainMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528C5C13259CEB11002D0BFE /* MainMenuViewModel.swift */; };
@@ -59,6 +60,7 @@
 		521D425D259E74D50079D68A /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
 		52319E54259E8C3700B8EEC5 /* CitiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesViewController.swift; sourceTree = "<group>"; };
 		52319E59259E8CDB00B8EEC5 /* CitiesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesViewModel.swift; sourceTree = "<group>"; };
+		524C697225A2464400839F06 /* UIControl+Publisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIControl+Publisher.swift"; sourceTree = "<group>"; };
 		5253DFFB259E8DE40044F603 /* AppDependencyContainer+CitiesAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDependencyContainer+CitiesAssembly.swift"; sourceTree = "<group>"; };
 		5253DFFF259E8FD30044F603 /* PreviewMocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewMocks.swift; sourceTree = "<group>"; };
 		528C5C13259CEB11002D0BFE /* MainMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewModel.swift; sourceTree = "<group>"; };
@@ -175,6 +177,14 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		524C697125A2462700839F06 /* UIControl */ = {
+			isa = PBXGroup;
+			children = (
+				524C697225A2464400839F06 /* UIControl+Publisher.swift */,
+			);
+			path = UIControl;
+			sourceTree = "<group>";
+		};
 		5253DFFA259E8DC00044F603 /* CitiesAssembly */ = {
 			isa = PBXGroup;
 			children = (
@@ -265,6 +275,7 @@
 		52BDF655259D0E5600E129CA /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				524C697125A2462700839F06 /* UIControl */,
 				52BDF65C259D153600E129CA /* UICollectionView */,
 				52BDF65B259D152800E129CA /* UITableView */,
 				52BDF656259D12A700E129CA /* UIView+ReusableView.swift */,
@@ -399,6 +410,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				524C697325A2464400839F06 /* UIControl+Publisher.swift in Sources */,
 				520BD97F25990F7200659295 /* MainMenuViewController.swift in Sources */,
 				52BDF662259D168800E129CA /* UITableView+DequeueReusableCell.swift in Sources */,
 				52EBA30125A2265000B77C10 /* SaveButtonCollectionViewCell.swift in Sources */,
