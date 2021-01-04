@@ -7,6 +7,7 @@
 
 import UIKit
 import SwiftUI
+import Combine
 
 final class InputFormViewController: UIViewController {
     
@@ -78,10 +79,11 @@ final class InputFormViewController: UIViewController {
     }
     
     @objc func save() {
-        print("Save")
+        collectionView.visibleCells.forEach { $0.endEditing(true) }
     }
     
     private let textFieldsPlaceholders: [String]
+    private var subscriptions = Set<AnyCancellable>()
 }
 
 extension InputFormViewController: UICollectionViewDataSource,
@@ -102,10 +104,12 @@ extension InputFormViewController: UICollectionViewDataSource,
         if indexPath.section == 0 {
             let cell: InputCollectionViewCell = collectionView.dequeueReusableCell(forIndexPath: indexPath)
             cell.setPlaceholder(textFieldsPlaceholders[indexPath.row])
+            //cell.textField.delegate = self
             return cell
         }
         
         let cell: SaveButtonCollectionViewCell = collectionView.dequeueReusableCell(forIndexPath: indexPath)
+        cell.saveButton.addTarget(self, action: #selector(save), for: .touchUpInside)
         return cell
     }
     
@@ -125,6 +129,37 @@ extension InputFormViewController: UICollectionViewDataSource,
         return UIEdgeInsets(top: 16, left: 0, bottom: 0, right: 0)
     }
 }
+
+//extension InputFormViewController: UITextFieldDelegate {
+//    func textFieldDidEndEditing(_ textField: UITextField) {
+//        guard let placeholder = textField.placeholder else { return }
+//        if textFieldsPlaceholders.contains(placeholder) {
+//            print(textField.text)
+//        }
+//    }
+//    
+//}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 final class InputViewController: UINavigationController {
     

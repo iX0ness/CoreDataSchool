@@ -8,11 +8,10 @@
 import UIKit
 
 class SaveButtonCollectionViewCell: UICollectionViewCell {
-    private lazy var saveButton: UIButton = {
+    lazy var saveButton: UIButton = {
         let button = UIButton()
         button.setTitle("Save", for: .normal)
         button.titleLabel?.font = UIFont.preferredFont(forTextStyle: .title2)
-        button.addTarget(self, action: #selector(save), for: .touchUpInside)
         button.backgroundColor = UIColor(hexString: ColorPalette.berry.hex)
         button.layer.cornerRadius = 10
         button.layer.masksToBounds = true
@@ -43,9 +42,6 @@ class SaveButtonCollectionViewCell: UICollectionViewCell {
         ])
     }
     
-    @objc func save() {
-        print("save")
-    }
 }
 
 extension SaveButtonCollectionViewCell: ReusableView {}

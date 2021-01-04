@@ -69,7 +69,7 @@ class CitiesViewController: UITableViewController {
     
     @objc func showInputFormViewController() {
         let vc = InputViewController(
-            textFieldsPlaceholders: ["Title"])
+            textFieldsPlaceholders: ["Title", "Subtitle"])
         self.present(vc, animated: true)
     }
     

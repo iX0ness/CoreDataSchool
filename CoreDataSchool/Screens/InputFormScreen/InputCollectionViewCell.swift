@@ -8,7 +8,7 @@
 import UIKit
 
 class InputCollectionViewCell: UICollectionViewCell {
-    private lazy var textField: UITextField = {
+    lazy var textField: UITextField = {
         let textField = UITextField()
         textField.borderStyle = .roundedRect
         textField.translatesAutoresizingMaskIntoConstraints = false
