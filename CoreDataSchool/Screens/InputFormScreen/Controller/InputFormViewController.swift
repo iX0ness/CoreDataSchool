@@ -104,7 +104,8 @@ extension InputFormViewController: UICollectionViewDataSource,
         if indexPath.section == 0 {
             let cell: InputCollectionViewCell = collectionView.dequeueReusableCell(forIndexPath: indexPath)
             cell.setPlaceholder(textFieldsPlaceholders[indexPath.row])
-            //cell.textField.delegate = self
+            cell.textField.delegate = self
+            
             return cell
         }
         
@@ -130,15 +131,15 @@ extension InputFormViewController: UICollectionViewDataSource,
     }
 }
 
-//extension InputFormViewController: UITextFieldDelegate {
-//    func textFieldDidEndEditing(_ textField: UITextField) {
-//        guard let placeholder = textField.placeholder else { return }
-//        if textFieldsPlaceholders.contains(placeholder) {
-//            print(textField.text)
-//        }
-//    }
-//    
-//}
+extension InputFormViewController: UITextFieldDelegate {
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        guard let placeholder = textField.placeholder else { return }
+        if textFieldsPlaceholders.contains(placeholder) {
+            print(textField.text)
+        }
+    }
+    
+}
 
 
 

@@ -43,6 +43,7 @@
 		52D94E1125A251FC000D291B /* Group+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D94E0925A251FC000D291B /* Group+CoreDataClass.swift */; };
 		52D94E1225A251FC000D291B /* Group+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D94E0A25A251FC000D291B /* Group+CoreDataProperties.swift */; };
 		52D94E1C25A25301000D291B /* Domain+OutputObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D94E1B25A25301000D291B /* Domain+OutputObject.swift */; };
+		52DA7F0D25A5F1660019715D /* InputType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DA7F0C25A5F1660019715D /* InputType.swift */; };
 		52EBA2E8259F9FA500B77C10 /* MockCity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EBA2E7259F9FA500B77C10 /* MockCity.swift */; };
 		52EBA2ED259FA3FA00B77C10 /* CityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EBA2EC259FA3FA00B77C10 /* CityTableViewCell.swift */; };
 		52EBA2F025A0C46D00B77C10 /* InputFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EBA2EF25A0C46D00B77C10 /* InputFormViewController.swift */; };
@@ -89,6 +90,7 @@
 		52D94E0925A251FC000D291B /* Group+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Group+CoreDataClass.swift"; sourceTree = "<group>"; };
 		52D94E0A25A251FC000D291B /* Group+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Group+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		52D94E1B25A25301000D291B /* Domain+OutputObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Domain+OutputObject.swift"; sourceTree = "<group>"; };
+		52DA7F0C25A5F1660019715D /* InputType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputType.swift; sourceTree = "<group>"; };
 		52EBA2E7259F9FA500B77C10 /* MockCity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCity.swift; sourceTree = "<group>"; };
 		52EBA2EC259FA3FA00B77C10 /* CityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityTableViewCell.swift; sourceTree = "<group>"; };
 		52EBA2EF25A0C46D00B77C10 /* InputFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputFormViewController.swift; sourceTree = "<group>"; };
@@ -338,6 +340,31 @@
 			path = Domain;
 			sourceTree = "<group>";
 		};
+		52DA7F0925A5F1180019715D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				52EBA2EF25A0C46D00B77C10 /* InputFormViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		52DA7F0A25A5F1280019715D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				52EBA2F625A10A0E00B77C10 /* InputCollectionViewCell.swift */,
+				52EBA30025A2265000B77C10 /* SaveButtonCollectionViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		52DA7F0B25A5F1300019715D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				52DA7F0C25A5F1660019715D /* InputType.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		52EBA2E6259F9F9400B77C10 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -357,9 +384,9 @@
 		52EBA2F225A0C47400B77C10 /* InputFormScreen */ = {
 			isa = PBXGroup;
 			children = (
-				52EBA2EF25A0C46D00B77C10 /* InputFormViewController.swift */,
-				52EBA2F625A10A0E00B77C10 /* InputCollectionViewCell.swift */,
-				52EBA30025A2265000B77C10 /* SaveButtonCollectionViewCell.swift */,
+				52DA7F0B25A5F1300019715D /* Model */,
+				52DA7F0A25A5F1280019715D /* View */,
+				52DA7F0925A5F1180019715D /* Controller */,
 			);
 			path = InputFormScreen;
 			sourceTree = "<group>";
@@ -447,6 +474,7 @@
 				52319E5A259E8CDB00B8EEC5 /* CitiesViewModel.swift in Sources */,
 				520BD97B25990F7200659295 /* AppDelegate.swift in Sources */,
 				52D94E1C25A25301000D291B /* Domain+OutputObject.swift in Sources */,
+				52DA7F0D25A5F1660019715D /* InputType.swift in Sources */,
 				52D94E0F25A251FC000D291B /* Teacher+CoreDataClass.swift in Sources */,
 				521D4254259E42980079D68A /* UIColor+HEX.swift in Sources */,
 				52D94E0C25A251FC000D291B /* City+CoreDataProperties.swift in Sources */,
