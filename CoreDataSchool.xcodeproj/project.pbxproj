@@ -43,12 +43,18 @@
 		52D94E1125A251FC000D291B /* Group+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D94E0925A251FC000D291B /* Group+CoreDataClass.swift */; };
 		52D94E1225A251FC000D291B /* Group+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D94E0A25A251FC000D291B /* Group+CoreDataProperties.swift */; };
 		52D94E1C25A25301000D291B /* Domain+OutputObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D94E1B25A25301000D291B /* Domain+OutputObject.swift */; };
-		52DA7F0D25A5F1660019715D /* InputType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DA7F0C25A5F1660019715D /* InputType.swift */; };
 		52EBA2E8259F9FA500B77C10 /* MockCity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EBA2E7259F9FA500B77C10 /* MockCity.swift */; };
 		52EBA2ED259FA3FA00B77C10 /* CityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EBA2EC259FA3FA00B77C10 /* CityTableViewCell.swift */; };
 		52EBA2F025A0C46D00B77C10 /* InputFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EBA2EF25A0C46D00B77C10 /* InputFormViewController.swift */; };
-		52EBA2F725A10A0E00B77C10 /* InputCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EBA2F625A10A0E00B77C10 /* InputCollectionViewCell.swift */; };
+		52EBA2F725A10A0E00B77C10 /* TextFieldCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EBA2F625A10A0E00B77C10 /* TextFieldCollectionViewCell.swift */; };
 		52EBA30125A2265000B77C10 /* SaveButtonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EBA30025A2265000B77C10 /* SaveButtonCollectionViewCell.swift */; };
+		883E2D6F25B333DD009F3D7A /* String+IsBlank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883E2D6E25B333DD009F3D7A /* String+IsBlank.swift */; };
+		885ED91F25B6252C00DBC630 /* NSRegularExpression+Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885ED91E25B6252C00DBC630 /* NSRegularExpression+Match.swift */; };
+		885ED92225B62AF100DBC630 /* ValidatorConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885ED92125B62AF100DBC630 /* ValidatorConvertible.swift */; };
+		885ED92825B639BF00DBC630 /* UITextField+ContentPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885ED92725B639BF00DBC630 /* UITextField+ContentPadding.swift */; };
+		885ED94A25B7796A00DBC630 /* FormInputConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885ED94925B7796A00DBC630 /* FormInputConfigurator.swift */; };
+		88D00A7825B378AD00E50871 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D00A7725B378AD00E50871 /* Validator.swift */; };
+		88DCED5D25BDBB3200EC2399 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DCED5C25BDBB3200EC2399 /* UIViewController+Alert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -90,12 +96,18 @@
 		52D94E0925A251FC000D291B /* Group+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Group+CoreDataClass.swift"; sourceTree = "<group>"; };
 		52D94E0A25A251FC000D291B /* Group+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Group+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		52D94E1B25A25301000D291B /* Domain+OutputObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Domain+OutputObject.swift"; sourceTree = "<group>"; };
-		52DA7F0C25A5F1660019715D /* InputType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputType.swift; sourceTree = "<group>"; };
 		52EBA2E7259F9FA500B77C10 /* MockCity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCity.swift; sourceTree = "<group>"; };
 		52EBA2EC259FA3FA00B77C10 /* CityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityTableViewCell.swift; sourceTree = "<group>"; };
 		52EBA2EF25A0C46D00B77C10 /* InputFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputFormViewController.swift; sourceTree = "<group>"; };
-		52EBA2F625A10A0E00B77C10 /* InputCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputCollectionViewCell.swift; sourceTree = "<group>"; };
+		52EBA2F625A10A0E00B77C10 /* TextFieldCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldCollectionViewCell.swift; sourceTree = "<group>"; };
 		52EBA30025A2265000B77C10 /* SaveButtonCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveButtonCollectionViewCell.swift; sourceTree = "<group>"; };
+		883E2D6E25B333DD009F3D7A /* String+IsBlank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+IsBlank.swift"; sourceTree = "<group>"; };
+		885ED91E25B6252C00DBC630 /* NSRegularExpression+Match.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSRegularExpression+Match.swift"; sourceTree = "<group>"; };
+		885ED92125B62AF100DBC630 /* ValidatorConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidatorConvertible.swift; sourceTree = "<group>"; };
+		885ED92725B639BF00DBC630 /* UITextField+ContentPadding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+ContentPadding.swift"; sourceTree = "<group>"; };
+		885ED94925B7796A00DBC630 /* FormInputConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormInputConfigurator.swift; sourceTree = "<group>"; };
+		88D00A7725B378AD00E50871 /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
+		88DCED5C25BDBB3200EC2399 /* UIViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +140,7 @@
 		520BD97925990F7200659295 /* CoreDataSchool */ = {
 			isa = PBXGroup;
 			children = (
+				88D00A7525B3787700E50871 /* Helpers */,
 				52D94DF525A25048000D291B /* Domain */,
 				5253E003259F6E490044F603 /* Screens */,
 				5253DFFE259E8FBF0044F603 /* PreviewMocks */,
@@ -280,6 +293,7 @@
 		52BDF654259D0E4F00E129CA /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				883E2D6D25B333CB009F3D7A /* Foundation */,
 				52BDF655259D0E5600E129CA /* UIKit */,
 			);
 			path = Extensions;
@@ -288,11 +302,13 @@
 		52BDF655259D0E5600E129CA /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				88DCED5B25BDBB1A00EC2399 /* UIViewController */,
+				885ED92625B639A900DBC630 /* UITextField */,
+				885ED92525B639A100DBC630 /* UIColor */,
+				885ED92425B6399900DBC630 /* UIView */,
 				524C697125A2462700839F06 /* UIControl */,
 				52BDF65C259D153600E129CA /* UICollectionView */,
 				52BDF65B259D152800E129CA /* UITableView */,
-				52BDF656259D12A700E129CA /* UIView+ReusableView.swift */,
-				521D4253259E42980079D68A /* UIColor+HEX.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -351,7 +367,7 @@
 		52DA7F0A25A5F1280019715D /* View */ = {
 			isa = PBXGroup;
 			children = (
-				52EBA2F625A10A0E00B77C10 /* InputCollectionViewCell.swift */,
+				52EBA2F625A10A0E00B77C10 /* TextFieldCollectionViewCell.swift */,
 				52EBA30025A2265000B77C10 /* SaveButtonCollectionViewCell.swift */,
 			);
 			path = View;
@@ -360,7 +376,7 @@
 		52DA7F0B25A5F1300019715D /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				52DA7F0C25A5F1660019715D /* InputType.swift */,
+				885ED94925B7796A00DBC630 /* FormInputConfigurator.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -389,6 +405,64 @@
 				52DA7F0925A5F1180019715D /* Controller */,
 			);
 			path = InputFormScreen;
+			sourceTree = "<group>";
+		};
+		883E2D6D25B333CB009F3D7A /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				883E2D6E25B333DD009F3D7A /* String+IsBlank.swift */,
+				885ED91E25B6252C00DBC630 /* NSRegularExpression+Match.swift */,
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
+		885ED92425B6399900DBC630 /* UIView */ = {
+			isa = PBXGroup;
+			children = (
+				52BDF656259D12A700E129CA /* UIView+ReusableView.swift */,
+			);
+			path = UIView;
+			sourceTree = "<group>";
+		};
+		885ED92525B639A100DBC630 /* UIColor */ = {
+			isa = PBXGroup;
+			children = (
+				521D4253259E42980079D68A /* UIColor+HEX.swift */,
+			);
+			path = UIColor;
+			sourceTree = "<group>";
+		};
+		885ED92625B639A900DBC630 /* UITextField */ = {
+			isa = PBXGroup;
+			children = (
+				885ED92725B639BF00DBC630 /* UITextField+ContentPadding.swift */,
+			);
+			path = UITextField;
+			sourceTree = "<group>";
+		};
+		88D00A7525B3787700E50871 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				88D00A7625B3787D00E50871 /* Validator */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		88D00A7625B3787D00E50871 /* Validator */ = {
+			isa = PBXGroup;
+			children = (
+				88D00A7725B378AD00E50871 /* Validator.swift */,
+				885ED92125B62AF100DBC630 /* ValidatorConvertible.swift */,
+			);
+			path = Validator;
+			sourceTree = "<group>";
+		};
+		88DCED5B25BDBB1A00EC2399 /* UIViewController */ = {
+			isa = PBXGroup;
+			children = (
+				88DCED5C25BDBB3200EC2399 /* UIViewController+Alert.swift */,
+			);
+			path = UIViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -464,6 +538,7 @@
 				520BD97F25990F7200659295 /* MainMenuViewController.swift in Sources */,
 				52D94E1125A251FC000D291B /* Group+CoreDataClass.swift in Sources */,
 				52BDF662259D168800E129CA /* UITableView+DequeueReusableCell.swift in Sources */,
+				88D00A7825B378AD00E50871 /* Validator.swift in Sources */,
 				52EBA30125A2265000B77C10 /* SaveButtonCollectionViewCell.swift in Sources */,
 				52EBA2F025A0C46D00B77C10 /* InputFormViewController.swift in Sources */,
 				5253DFFC259E8DE40044F603 /* AppDependencyContainer+CitiesAssembly.swift in Sources */,
@@ -474,25 +549,30 @@
 				52319E5A259E8CDB00B8EEC5 /* CitiesViewModel.swift in Sources */,
 				520BD97B25990F7200659295 /* AppDelegate.swift in Sources */,
 				52D94E1C25A25301000D291B /* Domain+OutputObject.swift in Sources */,
-				52DA7F0D25A5F1660019715D /* InputType.swift in Sources */,
 				52D94E0F25A251FC000D291B /* Teacher+CoreDataClass.swift in Sources */,
 				521D4254259E42980079D68A /* UIColor+HEX.swift in Sources */,
 				52D94E0C25A251FC000D291B /* City+CoreDataProperties.swift in Sources */,
 				521D425A259E6BD70079D68A /* ImageAssets.swift in Sources */,
+				885ED92225B62AF100DBC630 /* ValidatorConvertible.swift in Sources */,
+				885ED92825B639BF00DBC630 /* UITextField+ContentPadding.swift in Sources */,
 				520BD98525990F7200659295 /* CoreDataSchool.xcdatamodeld in Sources */,
 				52EBA2ED259FA3FA00B77C10 /* CityTableViewCell.swift in Sources */,
-				52EBA2F725A10A0E00B77C10 /* InputCollectionViewCell.swift in Sources */,
+				52EBA2F725A10A0E00B77C10 /* TextFieldCollectionViewCell.swift in Sources */,
 				52BDF65E259D15D900E129CA /* UICollectionView+DequeueReusableCell.swift in Sources */,
 				528C5C14259CEB11002D0BFE /* MainMenuViewModel.swift in Sources */,
+				885ED94A25B7796A00DBC630 /* FormInputConfigurator.swift in Sources */,
 				52BDF651259CEF5300E129CA /* MenuCollectionViewCell.swift in Sources */,
 				52C7872725992425001F5B68 /* CoreDataStack.swift in Sources */,
+				885ED91F25B6252C00DBC630 /* NSRegularExpression+Match.swift in Sources */,
 				52D94DFD25A250F4000D291B /* Domain+Student.swift in Sources */,
 				52D94E1025A251FC000D291B /* Teacher+CoreDataProperties.swift in Sources */,
 				52EBA2E8259F9FA500B77C10 /* MockCity.swift in Sources */,
 				52D94E0E25A251FC000D291B /* Student+CoreDataProperties.swift in Sources */,
 				52C7872D25992778001F5B68 /* AppDependencyContainer.swift in Sources */,
+				88DCED5D25BDBB3200EC2399 /* UIViewController+Alert.swift in Sources */,
 				520BD97D25990F7200659295 /* SceneDelegate.swift in Sources */,
 				52D94E0B25A251FC000D291B /* City+CoreDataClass.swift in Sources */,
+				883E2D6F25B333DD009F3D7A /* String+IsBlank.swift in Sources */,
 				52D94E1225A251FC000D291B /* Group+CoreDataProperties.swift in Sources */,
 				52319E55259E8C3700B8EEC5 /* CitiesViewController.swift in Sources */,
 				5253E000259E8FD30044F603 /* PreviewMocks.swift in Sources */,
@@ -639,8 +719,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = EDG9RYZ466;
+				DEVELOPMENT_TEAM = 9C825Y4865;
 				INFOPLIST_FILE = CoreDataSchool/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -658,8 +739,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = EDG9RYZ466;
+				DEVELOPMENT_TEAM = 9C825Y4865;
 				INFOPLIST_FILE = CoreDataSchool/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

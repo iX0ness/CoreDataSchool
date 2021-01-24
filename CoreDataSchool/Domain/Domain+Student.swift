@@ -9,7 +9,7 @@ import Foundation
 
 extension Domain {
     struct Student {
-        let birthday: Date
+        //let birthday: Date
         let email: String
         let firstname: String
         let lastname: String

@@ -16,7 +16,7 @@ extension Student {
         return NSFetchRequest<Student>(entityName: "Student")
     }
 
-    @NSManaged public var birthday: Date
+    //@NSManaged public var birthday: Date
     @NSManaged public var email: String
     @NSManaged public var firstname: String
     @NSManaged public var lastname: String

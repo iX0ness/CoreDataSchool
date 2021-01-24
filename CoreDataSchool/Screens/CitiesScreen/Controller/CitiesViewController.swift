@@ -8,7 +8,9 @@
 import UIKit
 import SwiftUI
 
-class CitiesViewController: UITableViewController {
+class CitiesViewController: UITableViewController, InputFormViewControllerDelegate {
+    
+    
     
     private let viewModel: CitiesViewModelType
     
@@ -68,9 +70,22 @@ class CitiesViewController: UITableViewController {
     }
     
     @objc func showInputFormViewController() {
-        let vc = InputViewController(
-            textFieldsPlaceholders: ["Title", "Subtitle"])
-        self.present(vc, animated: true)
+        let inputController = InputFormViewController(
+            inputConfigurators: [ FormInputConfigurator(placeholder: "Title",
+                                validator: VaildatorFactory.validatorFor(type: .requiredField(validatorType: .localityAlias)),
+                                cellType: .textField),
+                      FormInputConfigurator(placeholder: "Country",
+                                validator: VaildatorFactory.validatorFor(type: .requiredField(validatorType: .localityAlias)),
+                                cellType: .textField)
+            
+            ])
+        present(inputController, animated: true)
+        inputController.delegate = self
+        
+    }
+    
+    func didTapSaveInputs(inputs: [String : String]) {
+        print(inputs)
     }
     
 }
