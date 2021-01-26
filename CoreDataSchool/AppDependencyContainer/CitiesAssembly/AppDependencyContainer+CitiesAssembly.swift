@@ -17,6 +17,6 @@ extension AppDependencyContainer: CitiesAssembly {
     }
     
     private func makeCitiesViewModel() -> CitiesViewModel {
-        CitiesViewModel()
+        CitiesViewModel(databaseManager: databaseManager)
     }
 }

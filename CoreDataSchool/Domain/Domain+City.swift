@@ -10,6 +10,13 @@ import Foundation
 extension Domain {
     struct City {
         let title: String
-        let student: [Domain.Student?]
+        let country: String
+        let students: [Domain.Student]?
+    }
+}
+
+extension Domain.City {
+    var mock: Domain.City {
+        Domain.City(title: "MockCity", country: "MockCountry", students: [])
     }
 }

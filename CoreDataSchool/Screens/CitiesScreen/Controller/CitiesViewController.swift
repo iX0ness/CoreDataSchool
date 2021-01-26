@@ -71,21 +71,22 @@ class CitiesViewController: UITableViewController, InputFormViewControllerDelega
     
     @objc func showInputFormViewController() {
         let inputController = InputFormViewController(
-            inputConfigurators: [ FormInputConfigurator(placeholder: "Title",
-                                validator: VaildatorFactory.validatorFor(type: .requiredField(validatorType: .localityAlias)),
-                                cellType: .textField),
-                      FormInputConfigurator(placeholder: "Country",
-                                validator: VaildatorFactory.validatorFor(type: .requiredField(validatorType: .localityAlias)),
-                                cellType: .textField)
-            
+            inputConfigurators: [viewModel.outputs.cityTitleInputConfigurator,
+                                 viewModel.outputs.cityCountryInputConfigurator,
             ])
         present(inputController, animated: true)
         inputController.delegate = self
         
     }
     
-    func didTapSaveInputs(inputs: [String : String]) {
-        print(inputs)
+    func didTapSaveFormInputs(inputs: [String : String]) {
+        let cityTitle = inputs[viewModel.outputs.cityTitleInputConfigurator.placeholder] ?? "No city title"
+        let cityCountry = inputs[viewModel.outputs.cityCountryInputConfigurator.placeholder] ?? "No country title"
+        let city = Domain.City(
+            title: cityTitle,
+            country: cityCountry,
+            students: nil)
+        viewModel.inputs.saveCity(city)
     }
     
 }

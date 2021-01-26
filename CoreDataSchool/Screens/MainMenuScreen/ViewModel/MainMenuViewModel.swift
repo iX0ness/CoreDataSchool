@@ -31,8 +31,7 @@ class MainMenuViewModel: MainMenuViewModelType,
     let navigationTransition: PassthroughSubject<() -> UIViewController, Never> = PassthroughSubject()
     var itemsCount: Int { items.count }
     
-    init(coreDataStack: CoreDataStackType, assembler: CitiesAssembly) {
-        self.coreDataStack = coreDataStack
+    init(assembler: CitiesAssembly) {
         self.assembler = assembler
     }
 
@@ -51,7 +50,6 @@ class MainMenuViewModel: MainMenuViewModelType,
     }
     
     private let assembler: CitiesAssembly
-    private let coreDataStack: CoreDataStackType
     private let items = [
         MenuItem(asset: ImageAssets.students.assetTitle),
         MenuItem(asset: ImageAssets.groups.assetTitle),

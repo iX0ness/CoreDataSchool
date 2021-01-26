@@ -8,9 +8,7 @@
 import UIKit
 
 class AppDependencyContainer {
-    lazy var coreDataStack: CoreDataStack = {
-        let coreDataStack = CoreDataStack(modelName: "CoreDataSchool")
-        return coreDataStack
+    lazy var databaseManager: DatabaseManager = {
+        DatabaseManager(coreDataStack: CoreDataStack(modelName: "CoreDataSchool"))
     }()
-    
 }

@@ -17,6 +17,6 @@ extension AppDependencyContainer: MainMenuAssembly {
     }
     
     private func makeMainMenuViewModel() -> MainMenuViewModel {
-        MainMenuViewModel(coreDataStack: coreDataStack, assembler: self)
+        MainMenuViewModel(assembler: self)
     }
 }

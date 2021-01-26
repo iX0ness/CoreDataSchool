@@ -9,6 +9,7 @@ import UIKit
 
 protocol TextFieldCollectionViewCellDelegate: class {
     func textFiledEditingChanged(_ textField: UITextField, with placeholder: String, and text: String)
+    func textFieldDidEndEditing(_ textField: UITextField, with placeholder: String, and text: String)
 }
 
 class TextFieldCollectionViewCell: UICollectionViewCell {
@@ -38,7 +39,8 @@ class TextFieldCollectionViewCell: UICollectionViewCell {
         textField.layer.borderWidth = 1
         textField.layer.borderColor = UIColor.lightGray.cgColor
         textField.layer.masksToBounds = true
-        textField.addTarget(self, action: #selector(didEndEditting), for: .editingChanged)
+        textField.addTarget(self, action: #selector(editingChanged), for: .editingChanged)
+        textField.addTarget(self, action: #selector(editingDidEnd), for: .editingDidEnd)
         textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
     }()
@@ -58,10 +60,16 @@ private extension TextFieldCollectionViewCell {
         ])
     }
     
-    @objc private func didEndEditting(_ sender: UITextField) {
+    @objc private func editingChanged(_ sender: UITextField) {
         guard let placeholder = sender.placeholder,
               let text = sender.text else { return }
         delegate?.textFiledEditingChanged(sender, with: placeholder, and: text)
+    }
+    
+    @objc func editingDidEnd(_ sender: UITextField) {
+        guard let placeholder = sender.placeholder,
+              let text = sender.text else { return }
+        delegate?.textFieldDidEndEditing(sender, with: placeholder, and: text)
     }
 }
 

@@ -9,7 +9,7 @@ import Foundation
 import CoreData
 
 protocol CoreDataStackType {
-    var managedObjectContext: NSManagedObjectContext { get }
+    var mainContext: NSManagedObjectContext { get }
 }
 
 final class CoreDataStack: CoreDataStackType {
@@ -23,7 +23,7 @@ final class CoreDataStack: CoreDataStackType {
     }
 
     // MARK: - Core Data Stack
-    private(set) lazy var managedObjectContext: NSManagedObjectContext = {
+    private(set) lazy var mainContext: NSManagedObjectContext = {
         let managedObjectContext = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
 
         managedObjectContext.persistentStoreCoordinator = self.persistentStoreCoordinator

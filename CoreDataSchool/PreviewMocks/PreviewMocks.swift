@@ -13,27 +13,28 @@ struct MockAppDependencyContainer: MainMenuAssembly,
                                    CitiesAssembly {
     
     let mockCoreDataStack = MockCoreDataStack(
-        managedObjectContext: NSManagedObjectContext(
+        mainContext: NSManagedObjectContext(
             concurrencyType: .mainQueueConcurrencyType
         )
     )
     
     func makeMainMenuViewController() -> MainMenuViewController {
         MainMenuViewController(
-            viewModel: MainMenuViewModel(
-                coreDataStack: mockCoreDataStack,
-                assembler: self
-            )
+            viewModel: MainMenuViewModel(assembler: self)
         )
     }
     
     func makeCitiesViewController() -> CitiesViewController {
-        CitiesViewController(viewModel: CitiesViewModel())
+        CitiesViewController(viewModel: CitiesViewModel(databaseManager: MockDatabaseManager()))
     }
     
 }
 
 struct MockCoreDataStack: CoreDataStackType {
-    var managedObjectContext: NSManagedObjectContext
+    var mainContext: NSManagedObjectContext
+}
+
+struct MockDatabaseManager: DatabaseManagerType {
+    func saveCity(_ city: Domain.City) {}
 }
 #endif

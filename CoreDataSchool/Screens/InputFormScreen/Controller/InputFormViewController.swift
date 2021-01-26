@@ -9,7 +9,7 @@ import UIKit
 import SwiftUI
 
 protocol InputFormViewControllerDelegate: class {
-    func didTapSaveInputs(inputs: [String: String])
+    func didTapSaveFormInputs(inputs: [String: String])
 }
 
 final class InputFormViewController: UIViewController {
@@ -87,10 +87,24 @@ final class InputFormViewController: UIViewController {
 }
 
 extension InputFormViewController: TextFieldCollectionViewCellDelegate {
+    func textFieldDidEndEditing(_ textField: UITextField, with placeholder: String, and text: String) {
+        colorizeOnInput(of: textField, with: placeholder, and: text)
+        storeInput(of: textField, with: placeholder, and: text)
+    }
+    
     func textFiledEditingChanged(_ textField: UITextField, with placeholder: String, and text: String) {
+        colorizeOnInput(of: textField, with: placeholder, and: text)
+        storeInput(of: textField, with: placeholder, and: text)
+    }
+    
+    private func storeInput(of textField: UITextField, with placeholder: String, and text: String) {
+        guard let _ = inputConfigurators.first(where: { $0.placeholder == placeholder }) else { return }
+        inputsValues[placeholder] = text
+    }
+    
+    private func colorizeOnInput(of textField: UITextField, with placeholder: String, and text: String) {
         guard let inputConfigurator = inputConfigurators.first(where: { $0.placeholder == placeholder }) else { return }
-        if let validatedText = inputConfigurator.validator.validated(text) {
-            inputsValues[placeholder] = validatedText
+        if let _ = inputConfigurator.validator.validated(text) {
             textField.layer.borderColor = UIColor.lightGray.cgColor
         } else {
             textField.layer.borderColor = UIColor.red.cgColor
@@ -192,7 +206,7 @@ private extension InputFormViewController {
         guard let configurator = inputConfigurators.first(where: {
             $0.validator.validated(inputsValues[$0.placeholder] ?? "") == nil
         }) else {
-            delegate?.didTapSaveInputs(inputs: inputsValues)
+            delegate?.didTapSaveFormInputs(inputs: inputsValues)
             return
         }
         
