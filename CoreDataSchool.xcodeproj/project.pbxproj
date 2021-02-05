@@ -53,6 +53,7 @@
 		885ED92225B62AF100DBC630 /* ValidatorConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885ED92125B62AF100DBC630 /* ValidatorConvertible.swift */; };
 		885ED92825B639BF00DBC630 /* UITextField+ContentPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885ED92725B639BF00DBC630 /* UITextField+ContentPadding.swift */; };
 		885ED94A25B7796A00DBC630 /* FormInputConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885ED94925B7796A00DBC630 /* FormInputConfigurator.swift */; };
+		88C0E78E25CD52C200DA9AD7 /* UIViewController+DocumentsURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C0E78D25CD52C200DA9AD7 /* UIViewController+DocumentsURL.swift */; };
 		88D00A7825B378AD00E50871 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D00A7725B378AD00E50871 /* Validator.swift */; };
 		88DA2D7F25C09C3200EBFC86 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DA2D7E25C09C3200EBFC86 /* CoreDataManager.swift */; };
 		88DCED5D25BDBB3200EC2399 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DCED5C25BDBB3200EC2399 /* UIViewController+Alert.swift */; };
@@ -107,6 +108,7 @@
 		885ED92125B62AF100DBC630 /* ValidatorConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidatorConvertible.swift; sourceTree = "<group>"; };
 		885ED92725B639BF00DBC630 /* UITextField+ContentPadding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+ContentPadding.swift"; sourceTree = "<group>"; };
 		885ED94925B7796A00DBC630 /* FormInputConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormInputConfigurator.swift; sourceTree = "<group>"; };
+		88C0E78D25CD52C200DA9AD7 /* UIViewController+DocumentsURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+DocumentsURL.swift"; sourceTree = "<group>"; };
 		88D00A7725B378AD00E50871 /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
 		88DA2D7E25C09C3200EBFC86 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		88DCED5C25BDBB3200EC2399 /* UIViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
@@ -472,6 +474,7 @@
 			isa = PBXGroup;
 			children = (
 				88DCED5C25BDBB3200EC2399 /* UIViewController+Alert.swift */,
+				88C0E78D25CD52C200DA9AD7 /* UIViewController+DocumentsURL.swift */,
 			);
 			path = UIViewController;
 			sourceTree = "<group>";
@@ -564,6 +567,7 @@
 				521D4254259E42980079D68A /* UIColor+HEX.swift in Sources */,
 				52D94E0C25A251FC000D291B /* City+CoreDataProperties.swift in Sources */,
 				521D425A259E6BD70079D68A /* ImageAssets.swift in Sources */,
+				88C0E78E25CD52C200DA9AD7 /* UIViewController+DocumentsURL.swift in Sources */,
 				885ED92225B62AF100DBC630 /* ValidatorConvertible.swift in Sources */,
 				885ED92825B639BF00DBC630 /* UITextField+ContentPadding.swift in Sources */,
 				520BD98525990F7200659295 /* CoreDataSchool.xcdatamodeld in Sources */,

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Combine
 
 protocol CitiesViewModelType {
     var inputs: CitiesViewModelInputs { get }
@@ -14,11 +15,12 @@ protocol CitiesViewModelType {
 protocol CitiesViewModelInputs {
     func saveCity(_ city: Domain.City)
 }
-protocol CitiesViewModelOutputs {
+protocol CitiesViewModelOutputs: AnyObject {
     var count: Int { get }
+    var reloadData: (() -> Void)? { get set }
     var cityTitleInputConfigurator: FormInputConfigurator { get }
     var cityCountryInputConfigurator: FormInputConfigurator { get }
-    func city(at indexPath: IndexPath) -> MockCity
+    func city(at indexPath: IndexPath) -> Domain.City
 }
 
 class CitiesViewModel: CitiesViewModelType,
@@ -36,24 +38,31 @@ class CitiesViewModel: CitiesViewModelType,
         cellType: .textField)
     
     var count: Int { cities.count }
+    var reloadData: (() -> Void)?
     
     init(databaseManager: DatabaseManagerType) {
         self.databaseManager = databaseManager
+        databaseManager.didChangesPerform
+            .sink(receiveValue: { _ in
+                print("saved notification fired")
+                self.cities = self.databaseManager.getCities()
+                self.reloadData?()
+            })
+            .store(in: &subscriptions)
+        
     }
     
     func saveCity(_ city: Domain.City) {
         databaseManager.saveCity(city)
     }
     
-    
+    private var subscriptions = Set<AnyCancellable>()
     private let databaseManager: DatabaseManagerType
-    private let cities = [
-        MockCity(title: "Kyiv", country: "Ukraine"),
-        MockCity(title: "Vienna", country: "Austria"),
-        MockCity(title: "Prague", country: "Czech Republic"),
-    ]
+    private var cities: [Domain.City] = []
     
-    func city(at indexPath: IndexPath) -> MockCity {
+    
+    
+    func city(at indexPath: IndexPath) -> Domain.City {
         return cities[indexPath.row]
     }
     

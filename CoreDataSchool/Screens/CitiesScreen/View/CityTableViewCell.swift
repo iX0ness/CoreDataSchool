@@ -26,7 +26,7 @@ class CityTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    func configure(with city: MockCity) {
+    func configure(with city: Domain.City) {
         textLabel?.text = city.title
         detailTextLabel?.text = city.country
     }

@@ -11,11 +11,11 @@ import CoreData
 protocol CoreDataStackType {
     var mainContext: NSManagedObjectContext { get }
     var backgroundContext: NSManagedObjectContext { get }
+    func performChanges()
+    var viewContextPublisher: NotificationCenter.Publisher { get }
 }
 
 final class CoreDataStack: CoreDataStackType {
-    
-    
     
     // MARK: - Properties
     private let modelName: String
@@ -25,7 +25,38 @@ final class CoreDataStack: CoreDataStackType {
         self.modelName = modelName
     }
     
-    // MARK: - Core Data Stack
+    func performChanges() {
+        save()
+    }
+    
+    lazy var viewContextPublisher: NotificationCenter.Publisher = {
+        NotificationCenter.default.publisher(for: .NSManagedObjectContextDidSave,
+                                             object: mainContext)
+    }()
+    
+    private func save() {
+        guard backgroundContext.hasChanges else { return }
+        
+        backgroundContext.performAndWait {
+            do {
+                try self.backgroundContext.save()
+            } catch let error as NSError {
+                self.backgroundContext.rollback()
+                print("---Could not save---\n\(error)\n\(error.userInfo)")
+            }
+        }
+        
+        mainContext.performAndWait {
+            do {
+                try self.mainContext.save()
+            } catch let error as NSError {
+                self.mainContext.rollback()
+                print("---Could not save---\n\(error)\n\(error.userInfo)")
+            }
+        }
+    }
+    
+    // MARK: - Core Data Stack Setup
     private(set) lazy var mainContext: NSManagedObjectContext = {
         let managedObjectContext = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
         managedObjectContext.persistentStoreCoordinator = self.persistentStoreCoordinator
@@ -34,7 +65,7 @@ final class CoreDataStack: CoreDataStackType {
     
     lazy var backgroundContext: NSManagedObjectContext = {
         let managedObjectContext = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
-        managedObjectContext.persistentStoreCoordinator = self.persistentStoreCoordinator
+        managedObjectContext.parent = mainContext
         return managedObjectContext
     }()
     
@@ -52,10 +83,8 @@ final class CoreDataStack: CoreDataStackType {
     
     private lazy var persistentStoreCoordinator: NSPersistentStoreCoordinator = {
         let persistentStoreCoordinator = NSPersistentStoreCoordinator(managedObjectModel: self.managedObjectModel)
-        
         let fileManager = FileManager.default
         let storeName = "\(self.modelName).sqlite"
-        
         let documentsDirectoryURL = fileManager.urls(for: .documentDirectory, in: .userDomainMask)[0]
         
         let persistentStoreURL = documentsDirectoryURL.appendingPathComponent(storeName)
@@ -73,4 +102,6 @@ final class CoreDataStack: CoreDataStackType {
     }()
     
 }
+
+
 

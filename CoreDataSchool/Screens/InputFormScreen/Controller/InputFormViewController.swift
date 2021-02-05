@@ -140,7 +140,10 @@ extension InputFormViewController: UICollectionViewDataSource,
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.width, height: collectionView.frame.height * 0.1)
+        if indexPath.section == 0 {
+            return CGSize(width: collectionView.frame.width, height: collectionView.frame.height * 0.1)
+        }
+        return CGSize(width: collectionView.frame.width, height: collectionView.frame.height * 0.15)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
@@ -164,8 +167,6 @@ extension InputFormViewController: UICollectionViewDataSource,
             cell.delegate = self
             return cell
             
-            
-        default: fatalError("Should be able to dequeue cell")
         }
     }
 }
@@ -207,6 +208,7 @@ private extension InputFormViewController {
             $0.validator.validated(inputsValues[$0.placeholder] ?? "") == nil
         }) else {
             delegate?.didTapSaveFormInputs(inputs: inputsValues)
+            dismiss(animated: true)
             return
         }
         

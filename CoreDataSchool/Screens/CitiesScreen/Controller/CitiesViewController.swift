@@ -9,9 +9,7 @@ import UIKit
 import SwiftUI
 
 class CitiesViewController: UITableViewController, InputFormViewControllerDelegate {
-    
-    
-    
+
     private let viewModel: CitiesViewModelType
     
     init(viewModel: CitiesViewModelType) {
@@ -33,6 +31,9 @@ class CitiesViewController: UITableViewController, InputFormViewControllerDelega
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setupNavigationBarAppearance()
+        viewModel.outputs.reloadData = {
+            self.tableView.reloadData()
+        }
     }
     
     // MARK: - Table view data source
