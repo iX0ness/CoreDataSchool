@@ -13,9 +13,8 @@ struct MockAppDependencyContainer: MainMenuAssembly,
                                    CitiesAssembly {
     
     let mockCoreDataStack = MockCoreDataStack(
-        mainContext: NSManagedObjectContext(
-            concurrencyType: .mainQueueConcurrencyType
-        )
+        mainContext: NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType),
+        backgroundContext: NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
     )
     
     func makeMainMenuViewController() -> MainMenuViewController {
@@ -32,6 +31,7 @@ struct MockAppDependencyContainer: MainMenuAssembly,
 
 struct MockCoreDataStack: CoreDataStackType {
     var mainContext: NSManagedObjectContext
+    var backgroundContext: NSManagedObjectContext
 }
 
 struct MockDatabaseManager: DatabaseManagerType {

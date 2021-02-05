@@ -54,7 +54,7 @@
 		885ED92825B639BF00DBC630 /* UITextField+ContentPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885ED92725B639BF00DBC630 /* UITextField+ContentPadding.swift */; };
 		885ED94A25B7796A00DBC630 /* FormInputConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885ED94925B7796A00DBC630 /* FormInputConfigurator.swift */; };
 		88D00A7825B378AD00E50871 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D00A7725B378AD00E50871 /* Validator.swift */; };
-		88DA2D7F25C09C3200EBFC86 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DA2D7E25C09C3200EBFC86 /* DatabaseManager.swift */; };
+		88DA2D7F25C09C3200EBFC86 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DA2D7E25C09C3200EBFC86 /* CoreDataManager.swift */; };
 		88DCED5D25BDBB3200EC2399 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DCED5C25BDBB3200EC2399 /* UIViewController+Alert.swift */; };
 /* End PBXBuildFile section */
 
@@ -108,7 +108,7 @@
 		885ED92725B639BF00DBC630 /* UITextField+ContentPadding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+ContentPadding.swift"; sourceTree = "<group>"; };
 		885ED94925B7796A00DBC630 /* FormInputConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormInputConfigurator.swift; sourceTree = "<group>"; };
 		88D00A7725B378AD00E50871 /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
-		88DA2D7E25C09C3200EBFC86 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
+		88DA2D7E25C09C3200EBFC86 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		88DCED5C25BDBB3200EC2399 /* UIViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -463,7 +463,7 @@
 		88DA2D7D25C09C2100EBFC86 /* DatabaseManager */ = {
 			isa = PBXGroup;
 			children = (
-				88DA2D7E25C09C3200EBFC86 /* DatabaseManager.swift */,
+				88DA2D7E25C09C3200EBFC86 /* CoreDataManager.swift */,
 			);
 			path = DatabaseManager;
 			sourceTree = "<group>";
@@ -576,7 +576,7 @@
 				52C7872725992425001F5B68 /* CoreDataStack.swift in Sources */,
 				885ED91F25B6252C00DBC630 /* NSRegularExpression+Match.swift in Sources */,
 				52D94DFD25A250F4000D291B /* Domain+Student.swift in Sources */,
-				88DA2D7F25C09C3200EBFC86 /* DatabaseManager.swift in Sources */,
+				88DA2D7F25C09C3200EBFC86 /* CoreDataManager.swift in Sources */,
 				52D94E1025A251FC000D291B /* Teacher+CoreDataProperties.swift in Sources */,
 				52EBA2E8259F9FA500B77C10 /* MockCity.swift in Sources */,
 				52D94E0E25A251FC000D291B /* Student+CoreDataProperties.swift in Sources */,

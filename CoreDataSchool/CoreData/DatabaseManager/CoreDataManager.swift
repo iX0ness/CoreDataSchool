@@ -1,5 +1,5 @@
 //
-//  DatabaseManager.swift
+//  CoreDataManager.swift
 //  CoreDataSchool
 //
 //  Created by Mykhaylo Levchuk on 26/01/2021.
@@ -11,14 +11,21 @@ protocol DatabaseManagerType {
     func saveCity(_ city: Domain.City)
 }
 
-class DatabaseManager: DatabaseManagerType {
-    let coreDataStack: CoreDataStackType
+class CoreDataManager: DatabaseManagerType {
+    private let coreDataStack: CoreDataStackType
     
     init(coreDataStack: CoreDataStackType) {
         self.coreDataStack = coreDataStack
     }
     
     func saveCity(_ city: Domain.City) {
-        print("City \(city) saved")
+        print("City: \(city) saved")
+    }
+}
+
+private extension CoreDataManager {
+    func save(_ model: Domain) {
+        let context = coreDataStack.mainContext
+        
     }
 }
