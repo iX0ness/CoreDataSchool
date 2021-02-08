@@ -53,6 +53,8 @@
 		885ED92225B62AF100DBC630 /* ValidatorConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885ED92125B62AF100DBC630 /* ValidatorConvertible.swift */; };
 		885ED92825B639BF00DBC630 /* UITextField+ContentPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885ED92725B639BF00DBC630 /* UITextField+ContentPadding.swift */; };
 		885ED94A25B7796A00DBC630 /* FormInputConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885ED94925B7796A00DBC630 /* FormInputConfigurator.swift */; };
+		88657DF125D1F3680024DEF1 /* CoreDataManager+CitiesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88657DF025D1F3680024DEF1 /* CoreDataManager+CitiesManager.swift */; };
+		8875A7CA25D1F6F400090861 /* CoreDataModel+Managed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8875A7C925D1F6F400090861 /* CoreDataModel+Managed.swift */; };
 		889ECA4725D03513007DF6E0 /* NSManagedObject+Managed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889ECA4625D03513007DF6E0 /* NSManagedObject+Managed.swift */; };
 		88C0E78E25CD52C200DA9AD7 /* UIViewController+DocumentsURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C0E78D25CD52C200DA9AD7 /* UIViewController+DocumentsURL.swift */; };
 		88D00A7825B378AD00E50871 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D00A7725B378AD00E50871 /* Validator.swift */; };
@@ -109,6 +111,8 @@
 		885ED92125B62AF100DBC630 /* ValidatorConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidatorConvertible.swift; sourceTree = "<group>"; };
 		885ED92725B639BF00DBC630 /* UITextField+ContentPadding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+ContentPadding.swift"; sourceTree = "<group>"; };
 		885ED94925B7796A00DBC630 /* FormInputConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormInputConfigurator.swift; sourceTree = "<group>"; };
+		88657DF025D1F3680024DEF1 /* CoreDataManager+CitiesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataManager+CitiesManager.swift"; sourceTree = "<group>"; };
+		8875A7C925D1F6F400090861 /* CoreDataModel+Managed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataModel+Managed.swift"; sourceTree = "<group>"; };
 		889ECA4625D03513007DF6E0 /* NSManagedObject+Managed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedObject+Managed.swift"; sourceTree = "<group>"; };
 		88C0E78D25CD52C200DA9AD7 /* UIViewController+DocumentsURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+DocumentsURL.swift"; sourceTree = "<group>"; };
 		88D00A7725B378AD00E50871 /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
@@ -448,9 +452,18 @@
 			path = UITextField;
 			sourceTree = "<group>";
 		};
+		8875A7C825D1F6DE00090861 /* CoreDataModel+Managed */ = {
+			isa = PBXGroup;
+			children = (
+				8875A7C925D1F6F400090861 /* CoreDataModel+Managed.swift */,
+			);
+			path = "CoreDataModel+Managed";
+			sourceTree = "<group>";
+		};
 		889ECA4525D034F3007DF6E0 /* Managed */ = {
 			isa = PBXGroup;
 			children = (
+				8875A7C825D1F6DE00090861 /* CoreDataModel+Managed */,
 				889ECA4625D03513007DF6E0 /* NSManagedObject+Managed.swift */,
 			);
 			path = Managed;
@@ -477,6 +490,7 @@
 			isa = PBXGroup;
 			children = (
 				88DA2D7E25C09C3200EBFC86 /* CoreDataManager.swift */,
+				88657DF025D1F3680024DEF1 /* CoreDataManager+CitiesManager.swift */,
 			);
 			path = DatabaseManager;
 			sourceTree = "<group>";
@@ -577,6 +591,7 @@
 				52D94E0F25A251FC000D291B /* Teacher+CoreDataClass.swift in Sources */,
 				521D4254259E42980079D68A /* UIColor+HEX.swift in Sources */,
 				52D94E0C25A251FC000D291B /* City+CoreDataProperties.swift in Sources */,
+				88657DF125D1F3680024DEF1 /* CoreDataManager+CitiesManager.swift in Sources */,
 				521D425A259E6BD70079D68A /* ImageAssets.swift in Sources */,
 				88C0E78E25CD52C200DA9AD7 /* UIViewController+DocumentsURL.swift in Sources */,
 				885ED92225B62AF100DBC630 /* ValidatorConvertible.swift in Sources */,
@@ -591,6 +606,7 @@
 				52C7872725992425001F5B68 /* CoreDataStack.swift in Sources */,
 				885ED91F25B6252C00DBC630 /* NSRegularExpression+Match.swift in Sources */,
 				52D94DFD25A250F4000D291B /* Domain+Student.swift in Sources */,
+				8875A7CA25D1F6F400090861 /* CoreDataModel+Managed.swift in Sources */,
 				88DA2D7F25C09C3200EBFC86 /* CoreDataManager.swift in Sources */,
 				52D94E1025A251FC000D291B /* Teacher+CoreDataProperties.swift in Sources */,
 				52EBA2E8259F9FA500B77C10 /* MockCity.swift in Sources */,

@@ -40,13 +40,23 @@ struct MockCoreDataStack: CoreDataStackType {
     var backgroundContext: NSManagedObjectContext
 }
 
-struct MockDatabaseManager: DatabaseManagerType {
-    func getCities() -> [Domain.City] {
-        return []
+struct MockDatabaseManager: StoreObservable,
+                            CitiesManagerType {
+
+    let didPerformChanges: CurrentValueSubject<Void, Never> = CurrentValueSubject(())
+    
+    func saveCity(_ domain: Domain.City) {}
+    
+    func getCities() -> [Domain.City] { [] }
+    
+    func getCity(by id: Int) -> Domain.City {
+        Domain.City.mock
     }
     
-    var didPerformChanges: CurrentValueSubject<Void, Never> = CurrentValueSubject(())
+    func getCity(by title: String) -> [Domain.City] { [] }
     
-    func saveCity(_ city: Domain.City) {}
+    func getCity(in country: String) -> [Domain.City] { [] }
+    
+    
 }
 #endif

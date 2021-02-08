@@ -40,7 +40,7 @@ class CitiesViewModel: CitiesViewModelType,
     var count: Int { cities.count }
     var reloadData: (() -> Void)?
     
-    init(databaseManager: DatabaseManagerType) {
+    init(databaseManager: StoreObservable & CitiesManagerType) {
         self.databaseManager = databaseManager
         databaseManager.didPerformChanges
             .sink(receiveValue: { _ in
@@ -57,7 +57,7 @@ class CitiesViewModel: CitiesViewModelType,
     }
     
     private var subscriptions = Set<AnyCancellable>()
-    private let databaseManager: DatabaseManagerType
+    private let databaseManager: StoreObservable & CitiesManagerType
     private var cities: [Domain.City] = []
     
     

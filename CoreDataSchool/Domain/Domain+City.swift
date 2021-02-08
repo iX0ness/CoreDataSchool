@@ -16,7 +16,7 @@ extension Domain {
 }
 
 extension Domain.City {
-    var mock: Domain.City {
+    static var mock: Domain.City {
         Domain.City(title: "MockCity", country: "MockCountry", students: [])
     }
 }
