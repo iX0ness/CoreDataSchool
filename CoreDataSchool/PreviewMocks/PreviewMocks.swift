@@ -45,7 +45,7 @@ struct MockDatabaseManager: DatabaseManagerType {
         return []
     }
     
-    var didChangesPerform: CurrentValueSubject<Void, Never> = CurrentValueSubject(())
+    var didPerformChanges: CurrentValueSubject<Void, Never> = CurrentValueSubject(())
     
     func saveCity(_ city: Domain.City) {}
 }

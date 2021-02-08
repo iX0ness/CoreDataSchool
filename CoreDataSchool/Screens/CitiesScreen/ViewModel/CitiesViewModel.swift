@@ -42,7 +42,7 @@ class CitiesViewModel: CitiesViewModelType,
     
     init(databaseManager: DatabaseManagerType) {
         self.databaseManager = databaseManager
-        databaseManager.didChangesPerform
+        databaseManager.didPerformChanges
             .sink(receiveValue: { _ in
                 print("saved notification fired")
                 self.cities = self.databaseManager.getCities()
@@ -68,9 +68,6 @@ class CitiesViewModel: CitiesViewModelType,
     
     // TODO: add repository to view model
     
-    
-    
     var inputs: CitiesViewModelInputs { return self }
     var outputs: CitiesViewModelOutputs { return self }
-    
 }

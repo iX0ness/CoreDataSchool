@@ -12,12 +12,12 @@ import CoreData
 protocol DatabaseManagerType {
     func saveCity(_ domain: Domain.City)
     func getCities() -> [Domain.City] 
-    var didChangesPerform: CurrentValueSubject<Void, Never> { get }
+    var didPerformChanges: CurrentValueSubject<Void, Never> { get }
     
 }
 
 class CoreDataManager {
-    let didChangesPerform: CurrentValueSubject<Void, Never> = CurrentValueSubject(())
+    let didPerformChanges: CurrentValueSubject<Void, Never> = CurrentValueSubject(())
     
     init(coreDataStack: CoreDataStackType) {
         self.coreDataStack = coreDataStack
@@ -30,9 +30,13 @@ class CoreDataManager {
 
 extension CoreDataManager: DatabaseManagerType {
     func saveCity(_ domain: Domain.City) {
-        let city = City(context: coreDataStack.backgroundContext)
-        city.title = domain.title
-        city.country = domain.country
+        for i in 1...5000 {
+            let city = City(context: coreDataStack.backgroundContext)
+            city.title = "\(domain.title) - \(i)"
+            //city.title = domain.title
+            city.country = domain.country
+        }
+        
         coreDataStack.performChanges()
     }
     
@@ -53,7 +57,7 @@ extension CoreDataManager: DatabaseManagerType {
                 fatalError("Notification publisher crash")
             }
         }, receiveValue: { _ in
-            self.didChangesPerform.send(())
+            self.didPerformChanges.send(())
         })
         .store(in: &subscriptions)
     }

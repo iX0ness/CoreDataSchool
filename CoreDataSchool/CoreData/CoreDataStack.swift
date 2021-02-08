@@ -34,38 +34,45 @@ final class CoreDataStack: CoreDataStackType {
                                              object: mainContext)
     }()
     
-    private func save() {
+    private func save(_ completion: () -> Void = {}) {
         guard backgroundContext.hasChanges else { return }
         
-        backgroundContext.performAndWait {
-            do {
-                try self.backgroundContext.save()
-            } catch let error as NSError {
-                self.backgroundContext.rollback()
-                print("---Could not save---\n\(error)\n\(error.userInfo)")
+        DispatchQueue.global().async {
+            self.backgroundContext.performAndWait {
+                do {
+                    print("Current thread (seems to be background): \(Thread.current)")
+                    try self.backgroundContext.save()
+                    
+                } catch let error as NSError {
+                    self.backgroundContext.rollback()
+                    print("---Could not save---\n\(error)\n\(error.userInfo)")
+                }
+            }
+            
+            self.mainContext.performAndWait {
+                do {
+                    print("Current thread (seems to be main): \(Thread.current)")
+                    try self.mainContext.save()
+                } catch let error as NSError {
+                    self.mainContext.rollback()
+                    print("---Could not save---\n\(error)\n\(error.userInfo)")
+                }
             }
         }
         
-        mainContext.performAndWait {
-            do {
-                try self.mainContext.save()
-            } catch let error as NSError {
-                self.mainContext.rollback()
-                print("---Could not save---\n\(error)\n\(error.userInfo)")
-            }
-        }
+        completion()
     }
     
     // MARK: - Core Data Stack Setup
     private(set) lazy var mainContext: NSManagedObjectContext = {
         let managedObjectContext = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
-        managedObjectContext.persistentStoreCoordinator = self.persistentStoreCoordinator
+        managedObjectContext.parent = backgroundContext
         return managedObjectContext
     }()
     
     lazy var backgroundContext: NSManagedObjectContext = {
         let managedObjectContext = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
-        managedObjectContext.parent = mainContext
+        managedObjectContext.persistentStoreCoordinator = persistentStoreCoordinator
         return managedObjectContext
     }()
     

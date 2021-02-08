@@ -230,7 +230,7 @@ struct InputFormViewController_Preview: PreviewProvider {
                                                                                 cellType: .textField),
                                                           FormInputConfigurator(placeholder: "Country",
                                                                                 validator: VaildatorFactory.validatorFor(type: .requiredField(validatorType: .localityAlias)),
-                                                                                cellType: .textField)
+                                                                                cellType: .textField),
                                                           
             ])
         }
