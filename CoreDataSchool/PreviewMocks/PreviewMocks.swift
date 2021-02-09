@@ -31,6 +31,10 @@ struct MockAppDependencyContainer: MainMenuAssembly,
 }
 
 struct MockCoreDataStack: CoreDataStackType {
+    func performChanges(in completion: @escaping (NSManagedObjectContext) -> Void) {
+        
+    }
+    
     var viewContextPublisher: NotificationCenter.Publisher = NotificationCenter.default.publisher(for: .CKAccountChanged)
     
     func performChanges(_ callback: () -> Void) {}

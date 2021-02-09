@@ -49,6 +49,7 @@
 		52EBA2F725A10A0E00B77C10 /* TextFieldCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EBA2F625A10A0E00B77C10 /* TextFieldCollectionViewCell.swift */; };
 		52EBA30125A2265000B77C10 /* SaveButtonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EBA30025A2265000B77C10 /* SaveButtonCollectionViewCell.swift */; };
 		8819538425D3215F009337EF /* CoreDataSchoolTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8819538325D3215F009337EF /* CoreDataSchoolTests.swift */; };
+		8819538E25D32CF3009337EF /* ExampleCoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8819538D25D32CF3009337EF /* ExampleCoreDataStack.swift */; };
 		883E2D6F25B333DD009F3D7A /* String+IsBlank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883E2D6E25B333DD009F3D7A /* String+IsBlank.swift */; };
 		885ED91F25B6252C00DBC630 /* NSRegularExpression+Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885ED91E25B6252C00DBC630 /* NSRegularExpression+Match.swift */; };
 		885ED92225B62AF100DBC630 /* ValidatorConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885ED92125B62AF100DBC630 /* ValidatorConvertible.swift */; };
@@ -120,6 +121,7 @@
 		8819538125D3215F009337EF /* CoreDataSchoolTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoreDataSchoolTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8819538325D3215F009337EF /* CoreDataSchoolTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataSchoolTests.swift; sourceTree = "<group>"; };
 		8819538525D3215F009337EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8819538D25D32CF3009337EF /* ExampleCoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleCoreDataStack.swift; sourceTree = "<group>"; };
 		883E2D6E25B333DD009F3D7A /* String+IsBlank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+IsBlank.swift"; sourceTree = "<group>"; };
 		885ED91E25B6252C00DBC630 /* NSRegularExpression+Match.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSRegularExpression+Match.swift"; sourceTree = "<group>"; };
 		885ED92125B62AF100DBC630 /* ValidatorConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidatorConvertible.swift; sourceTree = "<group>"; };
@@ -375,6 +377,7 @@
 				52D94E0825A251FC000D291B /* Teacher+CoreDataProperties.swift */,
 				52D94E0925A251FC000D291B /* Group+CoreDataClass.swift */,
 				52D94E0A25A251FC000D291B /* Group+CoreDataProperties.swift */,
+				8819538D25D32CF3009337EF /* ExampleCoreDataStack.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -665,6 +668,7 @@
 				528C5C14259CEB11002D0BFE /* MainMenuViewModel.swift in Sources */,
 				885ED94A25B7796A00DBC630 /* FormInputConfigurator.swift in Sources */,
 				52BDF651259CEF5300E129CA /* MenuCollectionViewCell.swift in Sources */,
+				8819538E25D32CF3009337EF /* ExampleCoreDataStack.swift in Sources */,
 				52C7872725992425001F5B68 /* CoreDataStack.swift in Sources */,
 				885ED91F25B6252C00DBC630 /* NSRegularExpression+Match.swift in Sources */,
 				52D94DFD25A250F4000D291B /* Domain+Student.swift in Sources */,
