@@ -48,6 +48,7 @@
 		52EBA2F025A0C46D00B77C10 /* InputFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EBA2EF25A0C46D00B77C10 /* InputFormViewController.swift */; };
 		52EBA2F725A10A0E00B77C10 /* TextFieldCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EBA2F625A10A0E00B77C10 /* TextFieldCollectionViewCell.swift */; };
 		52EBA30125A2265000B77C10 /* SaveButtonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EBA30025A2265000B77C10 /* SaveButtonCollectionViewCell.swift */; };
+		8819538425D3215F009337EF /* CoreDataSchoolTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8819538325D3215F009337EF /* CoreDataSchoolTests.swift */; };
 		883E2D6F25B333DD009F3D7A /* String+IsBlank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883E2D6E25B333DD009F3D7A /* String+IsBlank.swift */; };
 		885ED91F25B6252C00DBC630 /* NSRegularExpression+Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885ED91E25B6252C00DBC630 /* NSRegularExpression+Match.swift */; };
 		885ED92225B62AF100DBC630 /* ValidatorConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885ED92125B62AF100DBC630 /* ValidatorConvertible.swift */; };
@@ -61,6 +62,16 @@
 		88DA2D7F25C09C3200EBFC86 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DA2D7E25C09C3200EBFC86 /* CoreDataManager.swift */; };
 		88DCED5D25BDBB3200EC2399 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DCED5C25BDBB3200EC2399 /* UIViewController+Alert.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8819538625D3215F009337EF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 520BD96F25990F7200659295 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 520BD97625990F7200659295;
+			remoteInfo = CoreDataSchool;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		520BD97725990F7200659295 /* CoreDataSchool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreDataSchool.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -106,6 +117,9 @@
 		52EBA2EF25A0C46D00B77C10 /* InputFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputFormViewController.swift; sourceTree = "<group>"; };
 		52EBA2F625A10A0E00B77C10 /* TextFieldCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldCollectionViewCell.swift; sourceTree = "<group>"; };
 		52EBA30025A2265000B77C10 /* SaveButtonCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveButtonCollectionViewCell.swift; sourceTree = "<group>"; };
+		8819538125D3215F009337EF /* CoreDataSchoolTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoreDataSchoolTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8819538325D3215F009337EF /* CoreDataSchoolTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataSchoolTests.swift; sourceTree = "<group>"; };
+		8819538525D3215F009337EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		883E2D6E25B333DD009F3D7A /* String+IsBlank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+IsBlank.swift"; sourceTree = "<group>"; };
 		885ED91E25B6252C00DBC630 /* NSRegularExpression+Match.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSRegularExpression+Match.swift"; sourceTree = "<group>"; };
 		885ED92125B62AF100DBC630 /* ValidatorConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidatorConvertible.swift; sourceTree = "<group>"; };
@@ -128,6 +142,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8819537E25D3215F009337EF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -135,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				520BD97925990F7200659295 /* CoreDataSchool */,
+				8819538225D3215F009337EF /* CoreDataSchoolTests */,
 				520BD97825990F7200659295 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -143,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				520BD97725990F7200659295 /* CoreDataSchool.app */,
+				8819538125D3215F009337EF /* CoreDataSchoolTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -419,6 +442,15 @@
 			path = InputFormScreen;
 			sourceTree = "<group>";
 		};
+		8819538225D3215F009337EF /* CoreDataSchoolTests */ = {
+			isa = PBXGroup;
+			children = (
+				8819538325D3215F009337EF /* CoreDataSchoolTests.swift */,
+				8819538525D3215F009337EF /* Info.plist */,
+			);
+			path = CoreDataSchoolTests;
+			sourceTree = "<group>";
+		};
 		883E2D6D25B333CB009F3D7A /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
@@ -524,6 +556,24 @@
 			productReference = 520BD97725990F7200659295 /* CoreDataSchool.app */;
 			productType = "com.apple.product-type.application";
 		};
+		8819538025D3215F009337EF /* CoreDataSchoolTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8819538A25D3215F009337EF /* Build configuration list for PBXNativeTarget "CoreDataSchoolTests" */;
+			buildPhases = (
+				8819537D25D3215F009337EF /* Sources */,
+				8819537E25D3215F009337EF /* Frameworks */,
+				8819537F25D3215F009337EF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8819538725D3215F009337EF /* PBXTargetDependency */,
+			);
+			name = CoreDataSchoolTests;
+			productName = CoreDataSchoolTests;
+			productReference = 8819538125D3215F009337EF /* CoreDataSchoolTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -535,6 +585,10 @@
 				TargetAttributes = {
 					520BD97625990F7200659295 = {
 						CreatedOnToolsVersion = 12.2;
+					};
+					8819538025D3215F009337EF = {
+						CreatedOnToolsVersion = 12.2;
+						TestTargetID = 520BD97625990F7200659295;
 					};
 				};
 			};
@@ -552,6 +606,7 @@
 			projectRoot = "";
 			targets = (
 				520BD97625990F7200659295 /* CoreDataSchool */,
+				8819538025D3215F009337EF /* CoreDataSchoolTests */,
 			);
 		};
 /* End PBXProject section */
@@ -563,6 +618,13 @@
 			files = (
 				520BD98A25990F7300659295 /* LaunchScreen.storyboard in Resources */,
 				520BD98725990F7300659295 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8819537F25D3215F009337EF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -627,7 +689,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8819537D25D3215F009337EF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8819538425D3215F009337EF /* CoreDataSchoolTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8819538725D3215F009337EF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 520BD97625990F7200659295 /* CoreDataSchool */;
+			targetProxy = 8819538625D3215F009337EF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		520BD98825990F7300659295 /* LaunchScreen.storyboard */ = {
@@ -797,6 +875,46 @@
 			};
 			name = Release;
 		};
+		8819538825D3215F009337EF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9C825Y4865;
+				INFOPLIST_FILE = CoreDataSchoolTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.iX0ness.CoreDataSchoolTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CoreDataSchool.app/CoreDataSchool";
+			};
+			name = Debug;
+		};
+		8819538925D3215F009337EF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9C825Y4865;
+				INFOPLIST_FILE = CoreDataSchoolTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.iX0ness.CoreDataSchoolTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CoreDataSchool.app/CoreDataSchool";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -814,6 +932,15 @@
 			buildConfigurations = (
 				520BD98F25990F7300659295 /* Debug */,
 				520BD99025990F7300659295 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8819538A25D3215F009337EF /* Build configuration list for PBXNativeTarget "CoreDataSchoolTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8819538825D3215F009337EF /* Debug */,
+				8819538925D3215F009337EF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

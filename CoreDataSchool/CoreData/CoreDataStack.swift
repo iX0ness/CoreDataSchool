@@ -70,7 +70,7 @@ final class CoreDataStack: CoreDataStackType {
         return managedObjectContext
     }()
     
-    lazy var backgroundContext: NSManagedObjectContext = {
+    private(set) lazy var backgroundContext: NSManagedObjectContext = {
         let managedObjectContext = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
         managedObjectContext.persistentStoreCoordinator = persistentStoreCoordinator
         return managedObjectContext
