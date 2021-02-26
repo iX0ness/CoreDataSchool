@@ -10,7 +10,7 @@ import CoreData
 
 protocol CitiesManagerType {
     func saveCity(_ domain: Domain.City)
-    func getCities() -> [Domain.City]
+    func getCities(completion: @escaping ([Domain.City]) -> Void)
     func getCity(by id: Int) -> Domain.City
     func getCity(by title: String) -> [Domain.City]
     func getCity(in country: String) -> [Domain.City]
@@ -18,32 +18,20 @@ protocol CitiesManagerType {
 
 extension CoreDataManager: CitiesManagerType {
     func saveCity(_ domain: Domain.City) {
-//        for i in 0...5000 {
-//            let city = City.create(in: coreDataStack.backgroundContext)
-//            city.title = domain.title + "\(i)"
-//            city.country = domain.title
-//        }
-        
-        coreDataStack.performChanges { context in
+        coreDataStack.performSave { context in
             for i in 0...5000 {
                 let city = City.create(in: context)
                 city.title = domain.title + "\(i)"
                 city.country = domain.title
             }
         }
-        
-        
     }
     
-    func getCities() -> [Domain.City] {
-        let citiesrequest: NSFetchRequest = City.fetchRequest()
-        let cities: [City] = try! coreDataStack.mainContext.fetch(citiesrequest)
-        var citiesDomain = [Domain.City]()
-        cities.forEach {
-            let domainCity = Domain.City(title: $0.title, country: $0.country, students: nil)
-            citiesDomain.append(domainCity)
+    func getCities(completion: @escaping ([Domain.City]) -> Void) {
+        coreDataStack.performFetch { context in
+            let cities = City.read(in: context).map { $0.domain }
+            completion(cities)
         }
-        return  citiesDomain
     }
     
     func getCity(by id: Int) -> Domain.City {

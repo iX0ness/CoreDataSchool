@@ -13,10 +13,7 @@ import Combine
 struct MockAppDependencyContainer: MainMenuAssembly,
                                    CitiesAssembly {
     
-    let mockCoreDataStack = MockCoreDataStack(
-        mainContext: NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType),
-        backgroundContext: NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
-    )
+    let mockCoreDataStack = MockCoreDataStack()
     
     func makeMainMenuViewController() -> MainMenuViewController {
         MainMenuViewController(
@@ -31,27 +28,19 @@ struct MockAppDependencyContainer: MainMenuAssembly,
 }
 
 struct MockCoreDataStack: CoreDataStackType {
-    func performChanges(in completion: @escaping (NSManagedObjectContext) -> Void) {
-        
-    }
-    
+    func performSave(_ completion: @escaping (NSManagedObjectContext) -> Void) {}
+    func performFetch(_ completion: @escaping (NSManagedObjectContext) -> Void) {}
     var viewContextPublisher: NotificationCenter.Publisher = NotificationCenter.default.publisher(for: .CKAccountChanged)
-    
-    func performChanges(_ callback: () -> Void) {}
-    func performChanges() {}
-    
-    var mainContext: NSManagedObjectContext
-    var backgroundContext: NSManagedObjectContext
 }
 
 struct MockDatabaseManager: StoreObservable,
                             CitiesManagerType {
-
+    
     let didPerformChanges: CurrentValueSubject<Void, Never> = CurrentValueSubject(())
     
     func saveCity(_ domain: Domain.City) {}
     
-    func getCities() -> [Domain.City] { [] }
+    func getCities(completion: @escaping ([Domain.City]) -> Void) {}
     
     func getCity(by id: Int) -> Domain.City {
         Domain.City.mock

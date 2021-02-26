@@ -39,6 +39,10 @@ extension City {
 
 }
 
-extension City : Identifiable {
+extension City : Identifiable {}
 
+extension City {
+    var domain: Domain.City {
+        Domain.City(title: title, country: country, students: nil)
+    }
 }

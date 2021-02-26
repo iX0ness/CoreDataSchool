@@ -43,9 +43,11 @@ class CitiesViewModel: CitiesViewModelType,
     init(databaseManager: StoreObservable & CitiesManagerType) {
         self.databaseManager = databaseManager
         databaseManager.didPerformChanges
-            .sink(receiveValue: { _ in
+            .sink(receiveValue: {
                 print("saved notification fired")
-                self.cities = self.databaseManager.getCities()
+                self.databaseManager.getCities { cities in
+                    self.cities = cities
+                }
                 self.reloadData?()
             })
             .store(in: &subscriptions)
