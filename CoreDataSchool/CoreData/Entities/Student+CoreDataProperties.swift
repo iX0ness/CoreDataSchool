@@ -2,7 +2,7 @@
 //  Student+CoreDataProperties.swift
 //  CoreDataSchool
 //
-//  Created by Mykhaylo Levchuk on 03/01/2021.
+//  Created by Mykhaylo Levchuk on 26/02/2021.
 //
 //
 
@@ -16,7 +16,6 @@ extension Student {
         return NSFetchRequest<Student>(entityName: "Student")
     }
 
-    //@NSManaged public var birthday: Date
     @NSManaged public var email: String
     @NSManaged public var firstname: String
     @NSManaged public var lastname: String
@@ -26,6 +25,17 @@ extension Student {
 
 }
 
-extension Student : Identifiable {
+extension Student : Identifiable {}
 
+extension Student {
+    var domain: Domain.Student {
+        Domain.Student(
+            email: email,
+            firstname: firstname,
+            lastname: lastname,
+            sex: sex,
+            city: city.domain,
+            group: group.domain
+        )
+    }
 }

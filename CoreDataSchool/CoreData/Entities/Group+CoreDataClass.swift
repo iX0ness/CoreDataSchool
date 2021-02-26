@@ -2,7 +2,7 @@
 //  Group+CoreDataClass.swift
 //  CoreDataSchool
 //
-//  Created by Mykhaylo Levchuk on 03/01/2021.
+//  Created by Mykhaylo Levchuk on 26/02/2021.
 //
 //
 

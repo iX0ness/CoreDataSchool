@@ -86,7 +86,7 @@ class CitiesViewController: UITableViewController, InputFormViewControllerDelega
         let city = Domain.City(
             title: cityTitle,
             country: cityCountry,
-            students: nil)
+            students: [])
         viewModel.inputs.saveCity(city)
     }
     

@@ -2,7 +2,7 @@
 //  Group+CoreDataProperties.swift
 //  CoreDataSchool
 //
-//  Created by Mykhaylo Levchuk on 03/01/2021.
+//  Created by Mykhaylo Levchuk on 26/02/2021.
 //
 //
 
@@ -18,7 +18,7 @@ extension Group {
 
     @NSManaged public var speciality: String
     @NSManaged public var title: String
-    @NSManaged public var student: NSSet?
+    @NSManaged public var students: Set<Student>?
 
 }
 
@@ -32,13 +32,20 @@ extension Group {
     @NSManaged public func removeFromStudent(_ value: Student)
 
     @objc(addStudent:)
-    @NSManaged public func addToStudent(_ values: NSSet)
+    @NSManaged public func addToStudent(_ values: Set<Student>)
 
     @objc(removeStudent:)
-    @NSManaged public func removeFromStudent(_ values: NSSet)
+    @NSManaged public func removeFromStudent(_ values: Set<Student>)
 
 }
 
-extension Group : Identifiable {
+extension Group : Identifiable {}
 
+extension Group {
+    var domain: Domain.Group {
+        Domain.Group(
+            speciality: speciality,
+            title: title,
+            students: students?.map { $0.domain} )
+    }
 }

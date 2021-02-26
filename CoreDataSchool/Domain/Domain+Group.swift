@@ -11,6 +11,6 @@ extension Domain {
     struct Group {
         let speciality: String
         let title: String
-        let student: [Domain.Student]
+        let students: [Domain.Student]?
     }
 }

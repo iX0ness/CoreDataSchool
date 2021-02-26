@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17511" systemVersion="20B29" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="20D64" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="City" representedClassName=".City" syncable="YES">
         <attribute name="country" optional="YES" attributeType="String"/>
         <attribute name="title" attributeType="String"/>
-        <relationship name="student" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Student" inverseName="city" inverseEntity="Student"/>
+        <relationship name="students" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Student" inverseName="city" inverseEntity="Student"/>
     </entity>
     <entity name="Group" representedClassName=".Group" syncable="YES">
         <attribute name="speciality" attributeType="String"/>
         <attribute name="title" attributeType="String"/>
-        <relationship name="student" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Student" inverseName="group" inverseEntity="Student"/>
+        <relationship name="students" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Student" inverseName="group" inverseEntity="Student"/>
     </entity>
     <entity name="Student" representedClassName=".Student" syncable="YES">
         <attribute name="email" attributeType="String"/>
         <attribute name="firstname" attributeType="String"/>
         <attribute name="lastname" attributeType="String"/>
         <attribute name="sex" attributeType="String"/>
-        <relationship name="city" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="City" inverseName="student" inverseEntity="City"/>
-        <relationship name="group" maxCount="1" deletionRule="Nullify" destinationEntity="Group" inverseName="student" inverseEntity="Group"/>
+        <relationship name="city" maxCount="1" deletionRule="Nullify" destinationEntity="City" inverseName="students" inverseEntity="City"/>
+        <relationship name="group" maxCount="1" deletionRule="Nullify" destinationEntity="Group" inverseName="students" inverseEntity="Group"/>
     </entity>
     <entity name="Teacher" representedClassName=".Teacher" syncable="YES">
         <attribute name="birthday" attributeType="Date" usesScalarValueType="NO"/>
@@ -26,9 +26,9 @@
         <attribute name="sex" attributeType="String"/>
     </entity>
     <elements>
-        <element name="City" positionX="-54" positionY="27" width="128" height="88"/>
-        <element name="Group" positionX="-489.083984375" positionY="65.25323486328125" width="128" height="88"/>
-        <element name="Student" positionX="-349.101318359375" positionY="-156.2295532226562" width="128" height="133"/>
+        <element name="City" positionX="-54" positionY="27" width="128" height="74"/>
+        <element name="Group" positionX="-489.083984375" positionY="65.25323486328125" width="128" height="74"/>
+        <element name="Student" positionX="-349.101318359375" positionY="-156.2295532226562" width="128" height="119"/>
         <element name="Teacher" positionX="-607.2041015625" positionY="-131.9204406738281" width="128" height="118"/>
     </elements>
 </model>

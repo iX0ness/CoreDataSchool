@@ -32,16 +32,19 @@ final class CoreDataStack: CoreDataStackType {
     }
     
     func performSave(_ completion: @escaping (NSManagedObjectContext) -> Void) {
+        
+        
         persistentContainer.performBackgroundTask { context in
             completion(context)
-            do {
-                print("Current thread (seems to be background): \(Thread.current)")
-                try context.save()
-            } catch let error as NSError {
-                context.rollback()
-                print("---Could not save---\n\(error)\n\(error.userInfo)")
+            if context.hasChanges {
+                do {
+                    print("Current thread (seems to be background): \(Thread.current)")
+                    try context.save()
+                } catch let error as NSError {
+                    context.rollback()
+                    print("---Could not save---\n\(error)\n\(error.userInfo)")
+                }
             }
-            
             self.mainContext.perform {
                 do {
                     print("Current thread (seems to be main): \(Thread.current)")
@@ -90,6 +93,8 @@ private extension CoreDataStack {
                 fatalError("was unable to load store \(error!)")
             }
             completion()
+            container.viewContext.mergePolicy = NSMergePolicy.mergeByPropertyStoreTrump
+            container.viewContext.automaticallyMergesChangesFromParent = true
         }
     }
 
@@ -100,8 +105,7 @@ private extension CoreDataStack {
         let containerDescription = NSPersistentStoreDescription()
         let storeURL = getStoreURL(for: storeType).appendingPathComponent(modelName)
         containerDescription.url = storeURL
-        persistentContainer.viewContext.mergePolicy = NSMergePolicy.mergeByPropertyStoreTrump
-        persistentContainer.viewContext.automaticallyMergesChangesFromParent = true
+        
         persistentContainer.persistentStoreDescriptions = [containerDescription]
         loadPersistentStore(container: persistentContainer)
         return persistentContainer
