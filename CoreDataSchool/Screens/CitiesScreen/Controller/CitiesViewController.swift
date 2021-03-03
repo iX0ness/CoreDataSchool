@@ -85,8 +85,7 @@ class CitiesViewController: UITableViewController, InputFormViewControllerDelega
         let cityCountry = inputs[viewModel.outputs.cityCountryInputConfigurator.placeholder] ?? "No country title"
         let city = Domain.City(
             title: cityTitle,
-            country: cityCountry,
-            students: [])
+            country: cityCountry)
         viewModel.inputs.saveCity(city)
     }
     

@@ -11,7 +11,9 @@ import Combine
 
 #if DEBUG
 struct MockAppDependencyContainer: MainMenuAssembly,
-                                   CitiesAssembly {
+                                   CitiesAssembly, StudentsAssembly {
+    
+    
     
     let mockCoreDataStack = MockCoreDataStack()
     
@@ -23,6 +25,10 @@ struct MockAppDependencyContainer: MainMenuAssembly,
     
     func makeCitiesViewController() -> CitiesViewController {
         CitiesViewController(viewModel: CitiesViewModel(databaseManager: MockDatabaseManager()))
+    }
+    
+    func makeStudentsViewController() -> StudentsViewController {
+        StudentsViewController(viewModel: StudentsViewModel(databaseManager: MockDatabaseManager()))
     }
     
 }

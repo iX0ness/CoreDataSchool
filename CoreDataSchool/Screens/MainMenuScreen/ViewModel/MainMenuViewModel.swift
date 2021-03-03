@@ -8,6 +8,8 @@
 import UIKit
 import Combine
 
+typealias NavigationTransition = () -> UIViewController
+
 protocol MainMenuViewModelType {
     var inputs: MainMenuViewModelInputs { get }
     var outputs: MainMenuViewModelOutputs { get }
@@ -28,10 +30,10 @@ class MainMenuViewModel: MainMenuViewModelType,
                          MainMenuViewModelInputs,
                          MainMenuViewModelOutputs {
     
-    let navigationTransition: PassthroughSubject<() -> UIViewController, Never> = PassthroughSubject()
+    let navigationTransition: PassthroughSubject<NavigationTransition, Never> = PassthroughSubject()
     var itemsCount: Int { items.count }
     
-    init(assembler: CitiesAssembly) {
+    init(assembler: CitiesAssembly & StudentsAssembly) {
         self.assembler = assembler
     }
 
@@ -41,15 +43,16 @@ class MainMenuViewModel: MainMenuViewModelType,
     
     func pushViewController(at indexPath: IndexPath) {
         switch indexPath.row {
+        case 0:
+            navigationTransition.send(assembler.makeStudentsViewController)
+        
         case 2:
-            navigationTransition.send(
-                assembler.makeCitiesViewController
-            )
+            navigationTransition.send(assembler.makeCitiesViewController)
         default: break
         }
     }
     
-    private let assembler: CitiesAssembly
+    private let assembler: CitiesAssembly & StudentsAssembly
     private let items = [
         MenuItem(asset: ImageAssets.students.assetTitle),
         MenuItem(asset: ImageAssets.groups.assetTitle),

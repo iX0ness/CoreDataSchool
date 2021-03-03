@@ -226,10 +226,10 @@ struct InputFormViewController_Preview: PreviewProvider {
     struct VCContainerView: UIViewControllerRepresentable {
         func makeUIViewController(context: Context) -> InputFormViewController {
             InputFormViewController(inputConfigurators: [ FormInputConfigurator(placeholder: "Title",
-                                                                                validator: VaildatorFactory.validatorFor(type: .requiredField(validatorType: .localityAlias)),
+                                                                                validator: ValidatorFactory.validatorFor(type: .requiredField(validatorType: .localityAlias)),
                                                                                 cellType: .textField),
                                                           FormInputConfigurator(placeholder: "Country",
-                                                                                validator: VaildatorFactory.validatorFor(type: .requiredField(validatorType: .localityAlias)),
+                                                                                validator: ValidatorFactory.validatorFor(type: .requiredField(validatorType: .localityAlias)),
                                                                                 cellType: .textField),
                                                           
             ])

@@ -28,23 +28,10 @@ extension CoreDataManager: CitiesManagerType {
     }
     
     func getCities(completion: @escaping ([Domain.City]) -> Void) {
-    
-       
-            coreDataStack.performFetch { context in
-                let cities = City.read(in: context).map { $0.domain }
-                completion(cities)
-                
-//                DispatchQueue.main.async {
-//                    completion(cities)
-//                    print("@@@ Thread: \(Thread.current)")
-//                }
-//
-//                print("@@@ Thread: \(Thread.current)")
-            }
-        
-            
-        
-        
+        coreDataStack.performFetch { context in
+            let cities = City.read(in: context).map { $0.domain }
+            completion(cities)
+        }
     }
     
     func getCity(by id: Int) -> Domain.City {

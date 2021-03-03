@@ -1,17 +1,19 @@
 //
-//  CityTableViewCell.swift
+//  StudentTableViewCell.swift
 //  CoreDataSchool
 //
-//  Created by Mykhaylo Levchuk on 01/01/2021.
+//  Created by Mykhaylo Levchuk on 03/03/2021.
 //
 
 import UIKit
 
-class CityTableViewCell: UITableViewCell {
+class StudentTableViewCell: UITableViewCell {
         
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: .subtitle, reuseIdentifier: reuseIdentifier)
         setupLabelsTextColor()
+        textLabel?.text = "Name"
+        detailTextLabel?.text = "Group"
     }
     
     required init?(coder: NSCoder) {
@@ -37,4 +39,4 @@ class CityTableViewCell: UITableViewCell {
     }
 }
 
-extension StudentTableViewCell: ReusableView {}
+extension CityTableViewCell: ReusableView {}
