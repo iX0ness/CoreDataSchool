@@ -19,7 +19,9 @@ struct EmailValidator: ValidatorConvertible {
     let pattern = "^[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}$"
 }
 
-struct PersonAliasValidator: ValidatorConvertible {}
+struct PersonAliasValidator: ValidatorConvertible {
+    let pattern = "(?<! )[-a-zA-Z' ]{2,26}"
+}
 
 struct GroupTitleValidator: ValidatorConvertible {}
 

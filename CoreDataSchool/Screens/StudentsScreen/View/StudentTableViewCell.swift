@@ -8,12 +8,19 @@
 import UIKit
 
 class StudentTableViewCell: UITableViewCell {
-        
+    
+    private lazy var accessoryImageView: UIImageView = {
+        let imageView = UIImageView(image: UIImage(systemName: "chevron.right"))
+        imageView.tintColor = UIColor(hexString: ColorPalette.pacificBlue.hex)
+        return imageView
+    }()
+  
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: .subtitle, reuseIdentifier: reuseIdentifier)
         setupLabelsTextColor()
         textLabel?.text = "Name"
         detailTextLabel?.text = "Group"
+        accessoryView = accessoryImageView
     }
     
     required init?(coder: NSCoder) {

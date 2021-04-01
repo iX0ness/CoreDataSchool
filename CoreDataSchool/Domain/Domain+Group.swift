@@ -14,3 +14,11 @@ extension Domain {
         let students: [Domain.Student]?
     }
 }
+
+extension Domain.Group {
+    static var mock: Domain.Group {
+        Domain.Group(speciality: "Informatics",
+                     title: "I-A",
+                     students: [])
+    }
+}

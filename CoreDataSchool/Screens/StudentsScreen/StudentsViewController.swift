@@ -24,21 +24,25 @@ class StudentsViewController: UITableViewController, InputFormViewControllerDele
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setupNavigationBarAppearance()
+    }
+    
     // MARK: - Table view data source
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return viewModel.outputs.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: StudentTableViewCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
-//        let city = viewModel.outputs.city(at: indexPath)
-//        cell.configure(with: city)
+        //        let city = viewModel.outputs.city(at: indexPath)
+        //        cell.configure(with: city)
         return cell
     }
-
+    
     func setupNavigationBarAppearance() {
         let appearance = UINavigationBarAppearance()
         appearance.titleTextAttributes = [
@@ -56,18 +60,30 @@ class StudentsViewController: UITableViewController, InputFormViewControllerDele
         addBarButtonItem.action = #selector(showInputFormViewController)
         navigationItem.rightBarButtonItem = addBarButtonItem
         navigationController?.navigationBar.tintColor = UIColor(hexString: ColorPalette.pacificBlue.hex)
-        title = "Cities"
+        title = "Students"
     }
     
     @objc func showInputFormViewController() {
         let inputController = InputFormViewController(
-            inputConfigurators: [])
+            inputConfigurators: [viewModel.outputs.firstnameInputConfigurator,
+                                 viewModel.outputs.lastnameInputConfigurator,
+                                 viewModel.outputs.emailInputConfigurator,
+            ])
         present(inputController, animated: true)
         inputController.delegate = self
         
     }
     
     func didTapSaveFormInputs(inputs: [String : String]) {
-        
+        let firstname = inputs[viewModel.outputs.firstnameInputConfigurator.placeholder] ?? "No firstname"
+        let lastname = inputs[viewModel.outputs.lastnameInputConfigurator.placeholder] ?? "No lastname"
+        let email = inputs[viewModel.outputs.lastnameInputConfigurator.placeholder] ?? "No email"
+        let student = Domain.Student(firstname: firstname,
+                                     lastname: lastname,
+                                     email: email,
+                                     sex: "M",
+                                     city: Domain.City.mock,
+                                     group: Domain.Group.mock)
+        print(firstname, " - ", lastname)
     }
 }

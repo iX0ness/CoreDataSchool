@@ -7,9 +7,14 @@
 
 import Foundation
 
-protocol StudentsViewModelInputs {}
+protocol StudentsViewModelInputs {
+    func saveStudent(_ city: Domain.Student)
+}
 
 protocol StudentsViewModelOutputs {
+    var firstnameInputConfigurator: FormInputConfigurator { get }
+    var lastnameInputConfigurator: FormInputConfigurator { get }
+    var emailInputConfigurator: FormInputConfigurator { get }
     var count: Int { get }
 }
 
@@ -21,6 +26,25 @@ protocol StudentsViewModelType {
 class StudentsViewModel: StudentsViewModelType,
                          StudentsViewModelInputs,
                          StudentsViewModelOutputs {
+    func saveStudent(_ city: Domain.Student) {
+    
+    }
+    
+    
+    let firstnameInputConfigurator = FormInputConfigurator(
+        placeholder: "First name",
+        validator: ValidatorFactory.validatorFor(type: .requiredField(validatorType: .personAlias)),
+        cellType: .textField)
+    
+    let lastnameInputConfigurator = FormInputConfigurator(
+        placeholder: "Last name",
+        validator: ValidatorFactory.validatorFor(type: .requiredField(validatorType: .personAlias)),
+        cellType: .textField)
+    
+    let emailInputConfigurator = FormInputConfigurator(
+        placeholder: "Email",
+        validator: ValidatorFactory.validatorFor(type: .email),
+        cellType: .textField)
     
     var count: Int { 5 }
     

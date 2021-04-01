@@ -50,6 +50,8 @@
 		88657DF125D1F3680024DEF1 /* CoreDataManager+CitiesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88657DF025D1F3680024DEF1 /* CoreDataManager+CitiesManager.swift */; };
 		8875A7CA25D1F6F400090861 /* CoreDataModel+Managed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8875A7C925D1F6F400090861 /* CoreDataModel+Managed.swift */; };
 		889ECA4725D03513007DF6E0 /* NSManagedObject+Managed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889ECA4625D03513007DF6E0 /* NSManagedObject+Managed.swift */; };
+		88A41BF526165B5D009F3E67 /* CoreDataManaged+StudentsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A41BF426165B5D009F3E67 /* CoreDataManaged+StudentsManager.swift */; };
+		88A41C01261661AB009F3E67 /* Student+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A41C00261661AB009F3E67 /* Student+Extension.swift */; };
 		88AB0D5025EEB878007E4B61 /* StudentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AB0D4F25EEB878007E4B61 /* StudentsViewController.swift */; };
 		88AB0D5425EEB88D007E4B61 /* StudentsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AB0D5325EEB88D007E4B61 /* StudentsViewModel.swift */; };
 		88C0E78E25CD52C200DA9AD7 /* UIViewController+DocumentsURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C0E78D25CD52C200DA9AD7 /* UIViewController+DocumentsURL.swift */; };
@@ -64,6 +66,7 @@
 		88EEFDD825E9470600DC6605 /* Student+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EEFDD225E9470600DC6605 /* Student+CoreDataProperties.swift */; };
 		88EEFDD925E9470600DC6605 /* Group+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EEFDD325E9470600DC6605 /* Group+CoreDataClass.swift */; };
 		88EEFDDA25E9470600DC6605 /* Group+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EEFDD425E9470600DC6605 /* Group+CoreDataProperties.swift */; };
+		88FCED6B2603FC1D00EC5A89 /* Domain+Sex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FCED6A2603FC1D00EC5A89 /* Domain+Sex.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -124,6 +127,8 @@
 		88657DF025D1F3680024DEF1 /* CoreDataManager+CitiesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataManager+CitiesManager.swift"; sourceTree = "<group>"; };
 		8875A7C925D1F6F400090861 /* CoreDataModel+Managed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataModel+Managed.swift"; sourceTree = "<group>"; };
 		889ECA4625D03513007DF6E0 /* NSManagedObject+Managed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedObject+Managed.swift"; sourceTree = "<group>"; };
+		88A41BF426165B5D009F3E67 /* CoreDataManaged+StudentsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataManaged+StudentsManager.swift"; sourceTree = "<group>"; };
+		88A41C00261661AB009F3E67 /* Student+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Student+Extension.swift"; sourceTree = "<group>"; };
 		88AB0D4F25EEB878007E4B61 /* StudentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentsViewController.swift; sourceTree = "<group>"; };
 		88AB0D5325EEB88D007E4B61 /* StudentsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentsViewModel.swift; sourceTree = "<group>"; };
 		88C0E78D25CD52C200DA9AD7 /* UIViewController+DocumentsURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+DocumentsURL.swift"; sourceTree = "<group>"; };
@@ -138,6 +143,7 @@
 		88EEFDD225E9470600DC6605 /* Student+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Student+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		88EEFDD325E9470600DC6605 /* Group+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Group+CoreDataClass.swift"; sourceTree = "<group>"; };
 		88EEFDD425E9470600DC6605 /* Group+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Group+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		88FCED6A2603FC1D00EC5A89 /* Domain+Sex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Domain+Sex.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -394,6 +400,7 @@
 				52D94DFC25A250F4000D291B /* Domain+Student.swift */,
 				52D94DFF25A2514A000D291B /* Domain+Group.swift */,
 				52D94E1B25A25301000D291B /* Domain+OutputObject.swift */,
+				88FCED6A2603FC1D00EC5A89 /* Domain+Sex.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -494,6 +501,7 @@
 		8875A7C825D1F6DE00090861 /* CoreDataModel+Managed */ = {
 			isa = PBXGroup;
 			children = (
+				889ECA4625D03513007DF6E0 /* NSManagedObject+Managed.swift */,
 				8875A7C925D1F6F400090861 /* CoreDataModel+Managed.swift */,
 			);
 			path = "CoreDataModel+Managed";
@@ -503,7 +511,7 @@
 			isa = PBXGroup;
 			children = (
 				8875A7C825D1F6DE00090861 /* CoreDataModel+Managed */,
-				889ECA4625D03513007DF6E0 /* NSManagedObject+Managed.swift */,
+				88A41C00261661AB009F3E67 /* Student+Extension.swift */,
 			);
 			path = Managed;
 			sourceTree = "<group>";
@@ -580,6 +588,7 @@
 			children = (
 				88DA2D7E25C09C3200EBFC86 /* CoreDataManager.swift */,
 				88657DF025D1F3680024DEF1 /* CoreDataManager+CitiesManager.swift */,
+				88A41BF426165B5D009F3E67 /* CoreDataManaged+StudentsManager.swift */,
 			);
 			path = DatabaseManager;
 			sourceTree = "<group>";
@@ -710,6 +719,7 @@
 				52319E5A259E8CDB00B8EEC5 /* CitiesViewModel.swift in Sources */,
 				520BD97B25990F7200659295 /* AppDelegate.swift in Sources */,
 				52D94E1C25A25301000D291B /* Domain+OutputObject.swift in Sources */,
+				88FCED6B2603FC1D00EC5A89 /* Domain+Sex.swift in Sources */,
 				521D4254259E42980079D68A /* UIColor+HEX.swift in Sources */,
 				88EEFDDA25E9470600DC6605 /* Group+CoreDataProperties.swift in Sources */,
 				88657DF125D1F3680024DEF1 /* CoreDataManager+CitiesManager.swift in Sources */,
@@ -723,6 +733,7 @@
 				88AB0D5025EEB878007E4B61 /* StudentsViewController.swift in Sources */,
 				52EBA2F725A10A0E00B77C10 /* TextFieldCollectionViewCell.swift in Sources */,
 				88AB0D5425EEB88D007E4B61 /* StudentsViewModel.swift in Sources */,
+				88A41BF526165B5D009F3E67 /* CoreDataManaged+StudentsManager.swift in Sources */,
 				52BDF65E259D15D900E129CA /* UICollectionView+DequeueReusableCell.swift in Sources */,
 				528C5C14259CEB11002D0BFE /* MainMenuViewModel.swift in Sources */,
 				885ED94A25B7796A00DBC630 /* FormInputConfigurator.swift in Sources */,
@@ -744,6 +755,7 @@
 				5253E000259E8FD30044F603 /* PreviewMocks.swift in Sources */,
 				521D425E259E74D50079D68A /* MenuItem.swift in Sources */,
 				52D94E0025A2514A000D291B /* Domain+Group.swift in Sources */,
+				88A41C01261661AB009F3E67 /* Student+Extension.swift in Sources */,
 				52914653259CEC4200E0F253 /* AppDependencyContainer+MainMenuAssembly.swift in Sources */,
 				521D4257259E57F30079D68A /* ColorPalette.swift in Sources */,
 			);

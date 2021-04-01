@@ -30,9 +30,9 @@ extension Student : Identifiable {}
 extension Student {
     var domain: Domain.Student {
         Domain.Student(
-            email: email,
-            firstname: firstname,
-            lastname: lastname,
+            firstname: email,
+            lastname: firstname,
+            email: lastname,
             sex: sex,
             city: city.domain,
             group: group.domain

@@ -61,7 +61,9 @@ final class InputFormViewController: UIViewController {
     
     private lazy var standaloneItem: UINavigationItem = {
         let navigationItem = UINavigationItem()
-        navigationItem.rightBarButtonItem = UIBarButtonItem(systemItem: .close)
+        let closeBarButtonItem = UIBarButtonItem(systemItem: .close)
+        closeBarButtonItem.action = #selector(close)
+        navigationItem.rightBarButtonItem = closeBarButtonItem
         navigationItem.titleView = UILabel()
         navigationItem.title = "Add new"
         return navigationItem
@@ -214,6 +216,10 @@ private extension InputFormViewController {
         
         alert(text: "Invalid input",
               message: "Filed \(configurator.placeholder) has invalid input")
+    }
+    
+    @objc func close() {
+        dismiss(animated: true)
     }
 }
 
