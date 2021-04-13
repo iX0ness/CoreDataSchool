@@ -2,7 +2,7 @@
 //  Student+CoreDataClass.swift
 //  CoreDataSchool
 //
-//  Created by Mykhaylo Levchuk on 26/02/2021.
+//  Created by Mykhaylo Levchuk on 13/04/2021.
 //
 //
 

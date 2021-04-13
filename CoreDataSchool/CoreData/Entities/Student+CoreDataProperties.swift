@@ -2,7 +2,7 @@
 //  Student+CoreDataProperties.swift
 //  CoreDataSchool
 //
-//  Created by Mykhaylo Levchuk on 26/02/2021.
+//  Created by Mykhaylo Levchuk on 13/04/2021.
 //
 //
 
@@ -18,24 +18,11 @@ extension Student {
 
     @NSManaged public var email: String
     @NSManaged public var firstname: String
+    @NSManaged public var id: UUID
     @NSManaged public var lastname: String
     @NSManaged public var sex: String
     @NSManaged public var city: City?
-    //@NSManaged public var group: Group
 
 }
 
 extension Student : Identifiable {}
-
-extension Student {
-    var domain: Domain.Student {
-        Domain.Student(
-            firstname: email,
-            lastname: firstname,
-            email: lastname,
-            sex: sex,
-            city: city?.domain
-            //group: group.domain
-        )
-    }
-}

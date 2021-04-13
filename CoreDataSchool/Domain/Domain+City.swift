@@ -9,18 +9,18 @@ import Foundation
 
 extension Domain {
     struct City {
+        let id: UUID
         let title: String
         let country: String
         let students: [Domain.Student]?
         
-        init(title: String, country: String, students: [Domain.Student]? = nil) {
+        init(id: UUID = UUID(), title: String, country: String, students: [Domain.Student]? = nil) {
+            self.id = id
             self.title = title
             self.country = country
             self.students = students
         }
     }
-    
-    
 }
 
 extension Domain.City {

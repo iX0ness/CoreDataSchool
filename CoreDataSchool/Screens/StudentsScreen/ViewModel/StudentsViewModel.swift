@@ -12,7 +12,7 @@ protocol StudentsViewModelInputs {
     func saveStudent(_ student: Domain.Student)
 }
 
-protocol StudentsViewModelOutputs {
+protocol StudentsViewModelOutputs: AnyObject {
     var count: Int { get }
     var reloadData: (() -> Void)? { get set }
     var firstnameInputConfigurator: FormInputConfigurator { get }

@@ -20,6 +20,7 @@ extension CoreDataManager: CitiesManagerType {
     func saveCity(_ domain: Domain.City) {
         coreDataStack.performSave { context in
             let city = City.create(in: context)
+            city.id = domain.id
             city.title = domain.title
             city.country = domain.title
         }

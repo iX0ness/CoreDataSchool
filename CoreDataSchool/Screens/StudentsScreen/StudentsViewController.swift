@@ -28,6 +28,9 @@ class StudentsViewController: UITableViewController, InputFormViewControllerDele
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setupNavigationBarAppearance()
+        viewModel.outputs.reloadData = {
+            self.tableView.reloadData()
+        }
     }
     
     // MARK: - Table view data source

@@ -10,7 +10,6 @@
 		520BD97B25990F7200659295 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520BD97A25990F7200659295 /* AppDelegate.swift */; };
 		520BD97D25990F7200659295 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520BD97C25990F7200659295 /* SceneDelegate.swift */; };
 		520BD97F25990F7200659295 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520BD97E25990F7200659295 /* MainMenuViewController.swift */; };
-		520BD98525990F7200659295 /* CoreDataSchool.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 520BD98325990F7200659295 /* CoreDataSchool.xcdatamodeld */; };
 		520BD98725990F7300659295 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 520BD98625990F7300659295 /* Assets.xcassets */; };
 		520BD98A25990F7300659295 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 520BD98825990F7300659295 /* LaunchScreen.storyboard */; };
 		521D4254259E42980079D68A /* UIColor+HEX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521D4253259E42980079D68A /* UIColor+HEX.swift */; };
@@ -42,6 +41,7 @@
 		52EBA30125A2265000B77C10 /* SaveButtonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EBA30025A2265000B77C10 /* SaveButtonCollectionViewCell.swift */; };
 		8819538425D3215F009337EF /* CoreDataSchoolTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8819538325D3215F009337EF /* CoreDataSchoolTests.swift */; };
 		8819538E25D32CF3009337EF /* ExampleCoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8819538D25D32CF3009337EF /* ExampleCoreDataStack.swift */; };
+		8826F95F26261D570093499D /* City+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8826F95E26261D570093499D /* City+Extension.swift */; };
 		883E2D6F25B333DD009F3D7A /* String+IsBlank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883E2D6E25B333DD009F3D7A /* String+IsBlank.swift */; };
 		885ED91F25B6252C00DBC630 /* NSRegularExpression+Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885ED91E25B6252C00DBC630 /* NSRegularExpression+Match.swift */; };
 		885ED92225B62AF100DBC630 /* ValidatorConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885ED92125B62AF100DBC630 /* ValidatorConvertible.swift */; };
@@ -54,16 +54,17 @@
 		88A41C01261661AB009F3E67 /* Student+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A41C00261661AB009F3E67 /* Student+Extension.swift */; };
 		88AB0D5025EEB878007E4B61 /* StudentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AB0D4F25EEB878007E4B61 /* StudentsViewController.swift */; };
 		88AB0D5425EEB88D007E4B61 /* StudentsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AB0D5325EEB88D007E4B61 /* StudentsViewModel.swift */; };
+		88B053AB26261FBE007E6E1A /* CoreDataSchool.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 88B053A926261FBE007E6E1A /* CoreDataSchool.xcdatamodeld */; };
+		88B053B426261FE2007E6E1A /* Student+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B053B026261FE2007E6E1A /* Student+CoreDataClass.swift */; };
+		88B053B526261FE2007E6E1A /* Student+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B053B126261FE2007E6E1A /* Student+CoreDataProperties.swift */; };
+		88B053B626261FE2007E6E1A /* City+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B053B226261FE2007E6E1A /* City+CoreDataClass.swift */; };
+		88B053B726261FE2007E6E1A /* City+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B053B326261FE2007E6E1A /* City+CoreDataProperties.swift */; };
 		88C0E78E25CD52C200DA9AD7 /* UIViewController+DocumentsURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C0E78D25CD52C200DA9AD7 /* UIViewController+DocumentsURL.swift */; };
 		88C3D24B25F00A66009E7D31 /* StudentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C3D24A25F00A66009E7D31 /* StudentTableViewCell.swift */; };
 		88C3D25025F00BC1009E7D31 /* AppDependencyContainer+StudentsAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C3D24F25F00BC1009E7D31 /* AppDependencyContainer+StudentsAssembly.swift */; };
 		88D00A7825B378AD00E50871 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D00A7725B378AD00E50871 /* Validator.swift */; };
 		88DA2D7F25C09C3200EBFC86 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DA2D7E25C09C3200EBFC86 /* CoreDataManager.swift */; };
 		88DCED5D25BDBB3200EC2399 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DCED5C25BDBB3200EC2399 /* UIViewController+Alert.swift */; };
-		88EEFDD525E9470600DC6605 /* City+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EEFDCF25E9470600DC6605 /* City+CoreDataClass.swift */; };
-		88EEFDD625E9470600DC6605 /* City+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EEFDD025E9470600DC6605 /* City+CoreDataProperties.swift */; };
-		88EEFDD725E9470600DC6605 /* Student+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EEFDD125E9470600DC6605 /* Student+CoreDataClass.swift */; };
-		88EEFDD825E9470600DC6605 /* Student+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EEFDD225E9470600DC6605 /* Student+CoreDataProperties.swift */; };
 		88EEFDD925E9470600DC6605 /* Group+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EEFDD325E9470600DC6605 /* Group+CoreDataClass.swift */; };
 		88EEFDDA25E9470600DC6605 /* Group+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EEFDD425E9470600DC6605 /* Group+CoreDataProperties.swift */; };
 		88FCED6B2603FC1D00EC5A89 /* Domain+Sex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FCED6A2603FC1D00EC5A89 /* Domain+Sex.swift */; };
@@ -84,7 +85,6 @@
 		520BD97A25990F7200659295 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		520BD97C25990F7200659295 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		520BD97E25990F7200659295 /* MainMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
-		520BD98425990F7200659295 /* CoreDataSchool.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataSchool.xcdatamodel; sourceTree = "<group>"; };
 		520BD98625990F7300659295 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		520BD98925990F7300659295 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		520BD98B25990F7300659295 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -119,6 +119,7 @@
 		8819538325D3215F009337EF /* CoreDataSchoolTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataSchoolTests.swift; sourceTree = "<group>"; };
 		8819538525D3215F009337EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8819538D25D32CF3009337EF /* ExampleCoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleCoreDataStack.swift; sourceTree = "<group>"; };
+		8826F95E26261D570093499D /* City+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "City+Extension.swift"; sourceTree = "<group>"; };
 		883E2D6E25B333DD009F3D7A /* String+IsBlank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+IsBlank.swift"; sourceTree = "<group>"; };
 		885ED91E25B6252C00DBC630 /* NSRegularExpression+Match.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSRegularExpression+Match.swift"; sourceTree = "<group>"; };
 		885ED92125B62AF100DBC630 /* ValidatorConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidatorConvertible.swift; sourceTree = "<group>"; };
@@ -131,16 +132,17 @@
 		88A41C00261661AB009F3E67 /* Student+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Student+Extension.swift"; sourceTree = "<group>"; };
 		88AB0D4F25EEB878007E4B61 /* StudentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentsViewController.swift; sourceTree = "<group>"; };
 		88AB0D5325EEB88D007E4B61 /* StudentsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentsViewModel.swift; sourceTree = "<group>"; };
+		88B053AA26261FBE007E6E1A /* CoreDataSchool.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataSchool.xcdatamodel; sourceTree = "<group>"; };
+		88B053B026261FE2007E6E1A /* Student+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Student+CoreDataClass.swift"; sourceTree = "<group>"; };
+		88B053B126261FE2007E6E1A /* Student+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Student+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		88B053B226261FE2007E6E1A /* City+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "City+CoreDataClass.swift"; sourceTree = "<group>"; };
+		88B053B326261FE2007E6E1A /* City+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "City+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		88C0E78D25CD52C200DA9AD7 /* UIViewController+DocumentsURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+DocumentsURL.swift"; sourceTree = "<group>"; };
 		88C3D24A25F00A66009E7D31 /* StudentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentTableViewCell.swift; sourceTree = "<group>"; };
 		88C3D24F25F00BC1009E7D31 /* AppDependencyContainer+StudentsAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDependencyContainer+StudentsAssembly.swift"; sourceTree = "<group>"; };
 		88D00A7725B378AD00E50871 /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
 		88DA2D7E25C09C3200EBFC86 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		88DCED5C25BDBB3200EC2399 /* UIViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
-		88EEFDCF25E9470600DC6605 /* City+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "City+CoreDataClass.swift"; sourceTree = "<group>"; };
-		88EEFDD025E9470600DC6605 /* City+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "City+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		88EEFDD125E9470600DC6605 /* Student+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Student+CoreDataClass.swift"; sourceTree = "<group>"; };
-		88EEFDD225E9470600DC6605 /* Student+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Student+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		88EEFDD325E9470600DC6605 /* Group+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Group+CoreDataClass.swift"; sourceTree = "<group>"; };
 		88EEFDD425E9470600DC6605 /* Group+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Group+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		88FCED6A2603FC1D00EC5A89 /* Domain+Sex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Domain+Sex.swift"; sourceTree = "<group>"; };
@@ -197,7 +199,6 @@
 				520BD98625990F7300659295 /* Assets.xcassets */,
 				520BD98825990F7300659295 /* LaunchScreen.storyboard */,
 				520BD98B25990F7300659295 /* Info.plist */,
-				520BD98325990F7200659295 /* CoreDataSchool.xcdatamodeld */,
 				521D4256259E57F30079D68A /* ColorPalette.swift */,
 				521D4259259E6BD70079D68A /* ImageAssets.swift */,
 			);
@@ -211,6 +212,7 @@
 				88DA2D7D25C09C2100EBFC86 /* DatabaseManager */,
 				52C7872525992408001F5B68 /* Entities */,
 				52C7872625992425001F5B68 /* CoreDataStack.swift */,
+				88B053A926261FBE007E6E1A /* CoreDataSchool.xcdatamodeld */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -381,10 +383,10 @@
 		52C7872525992408001F5B68 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				88EEFDCF25E9470600DC6605 /* City+CoreDataClass.swift */,
-				88EEFDD025E9470600DC6605 /* City+CoreDataProperties.swift */,
-				88EEFDD125E9470600DC6605 /* Student+CoreDataClass.swift */,
-				88EEFDD225E9470600DC6605 /* Student+CoreDataProperties.swift */,
+				88B053B026261FE2007E6E1A /* Student+CoreDataClass.swift */,
+				88B053B126261FE2007E6E1A /* Student+CoreDataProperties.swift */,
+				88B053B226261FE2007E6E1A /* City+CoreDataClass.swift */,
+				88B053B326261FE2007E6E1A /* City+CoreDataProperties.swift */,
 				88EEFDD325E9470600DC6605 /* Group+CoreDataClass.swift */,
 				88EEFDD425E9470600DC6605 /* Group+CoreDataProperties.swift */,
 				8819538D25D32CF3009337EF /* ExampleCoreDataStack.swift */,
@@ -512,6 +514,7 @@
 			children = (
 				8875A7C825D1F6DE00090861 /* CoreDataModel+Managed */,
 				88A41C00261661AB009F3E67 /* Student+Extension.swift */,
+				8826F95E26261D570093499D /* City+Extension.swift */,
 			);
 			path = Managed;
 			sourceTree = "<group>";
@@ -703,10 +706,10 @@
 			files = (
 				524C697325A2464400839F06 /* UIControl+Publisher.swift in Sources */,
 				88C3D24B25F00A66009E7D31 /* StudentTableViewCell.swift in Sources */,
+				88B053AB26261FBE007E6E1A /* CoreDataSchool.xcdatamodeld in Sources */,
 				520BD97F25990F7200659295 /* MainMenuViewController.swift in Sources */,
 				52BDF662259D168800E129CA /* UITableView+DequeueReusableCell.swift in Sources */,
 				88D00A7825B378AD00E50871 /* Validator.swift in Sources */,
-				88EEFDD625E9470600DC6605 /* City+CoreDataProperties.swift in Sources */,
 				52EBA30125A2265000B77C10 /* SaveButtonCollectionViewCell.swift in Sources */,
 				52EBA2F025A0C46D00B77C10 /* InputFormViewController.swift in Sources */,
 				5253DFFC259E8DE40044F603 /* AppDependencyContainer+CitiesAssembly.swift in Sources */,
@@ -714,29 +717,30 @@
 				88C3D25025F00BC1009E7D31 /* AppDependencyContainer+StudentsAssembly.swift in Sources */,
 				52BDF657259D12A700E129CA /* UIView+ReusableView.swift in Sources */,
 				88EEFDD925E9470600DC6605 /* Group+CoreDataClass.swift in Sources */,
-				88EEFDD525E9470600DC6605 /* City+CoreDataClass.swift in Sources */,
 				52D94DFA25A25071000D291B /* Domain+City.swift in Sources */,
 				52319E5A259E8CDB00B8EEC5 /* CitiesViewModel.swift in Sources */,
 				520BD97B25990F7200659295 /* AppDelegate.swift in Sources */,
+				88B053B726261FE2007E6E1A /* City+CoreDataProperties.swift in Sources */,
 				52D94E1C25A25301000D291B /* Domain+OutputObject.swift in Sources */,
 				88FCED6B2603FC1D00EC5A89 /* Domain+Sex.swift in Sources */,
 				521D4254259E42980079D68A /* UIColor+HEX.swift in Sources */,
 				88EEFDDA25E9470600DC6605 /* Group+CoreDataProperties.swift in Sources */,
 				88657DF125D1F3680024DEF1 /* CoreDataManager+CitiesManager.swift in Sources */,
+				88B053B626261FE2007E6E1A /* City+CoreDataClass.swift in Sources */,
 				521D425A259E6BD70079D68A /* ImageAssets.swift in Sources */,
 				88C0E78E25CD52C200DA9AD7 /* UIViewController+DocumentsURL.swift in Sources */,
 				885ED92225B62AF100DBC630 /* ValidatorConvertible.swift in Sources */,
 				885ED92825B639BF00DBC630 /* UITextField+ContentPadding.swift in Sources */,
-				520BD98525990F7200659295 /* CoreDataSchool.xcdatamodeld in Sources */,
-				88EEFDD725E9470600DC6605 /* Student+CoreDataClass.swift in Sources */,
 				52EBA2ED259FA3FA00B77C10 /* CityTableViewCell.swift in Sources */,
 				88AB0D5025EEB878007E4B61 /* StudentsViewController.swift in Sources */,
 				52EBA2F725A10A0E00B77C10 /* TextFieldCollectionViewCell.swift in Sources */,
 				88AB0D5425EEB88D007E4B61 /* StudentsViewModel.swift in Sources */,
+				88B053B426261FE2007E6E1A /* Student+CoreDataClass.swift in Sources */,
 				88A41BF526165B5D009F3E67 /* CoreDataManaged+StudentsManager.swift in Sources */,
 				52BDF65E259D15D900E129CA /* UICollectionView+DequeueReusableCell.swift in Sources */,
 				528C5C14259CEB11002D0BFE /* MainMenuViewModel.swift in Sources */,
 				885ED94A25B7796A00DBC630 /* FormInputConfigurator.swift in Sources */,
+				88B053B526261FE2007E6E1A /* Student+CoreDataProperties.swift in Sources */,
 				52BDF651259CEF5300E129CA /* MenuCollectionViewCell.swift in Sources */,
 				8819538E25D32CF3009337EF /* ExampleCoreDataStack.swift in Sources */,
 				52C7872725992425001F5B68 /* CoreDataStack.swift in Sources */,
@@ -751,7 +755,7 @@
 				889ECA4725D03513007DF6E0 /* NSManagedObject+Managed.swift in Sources */,
 				883E2D6F25B333DD009F3D7A /* String+IsBlank.swift in Sources */,
 				52319E55259E8C3700B8EEC5 /* CitiesViewController.swift in Sources */,
-				88EEFDD825E9470600DC6605 /* Student+CoreDataProperties.swift in Sources */,
+				8826F95F26261D570093499D /* City+Extension.swift in Sources */,
 				5253E000259E8FD30044F603 /* PreviewMocks.swift in Sources */,
 				521D425E259E74D50079D68A /* MenuItem.swift in Sources */,
 				52D94E0025A2514A000D291B /* Domain+Group.swift in Sources */,
@@ -1020,14 +1024,15 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		520BD98325990F7200659295 /* CoreDataSchool.xcdatamodeld */ = {
+		88B053A926261FBE007E6E1A /* CoreDataSchool.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				520BD98425990F7200659295 /* CoreDataSchool.xcdatamodel */,
+				88B053AA26261FBE007E6E1A /* CoreDataSchool.xcdatamodel */,
 			);
-			currentVersion = 520BD98425990F7200659295 /* CoreDataSchool.xcdatamodel */;
-			path = CoreDataSchool.xcdatamodeld;
-			sourceTree = "<group>";
+			currentVersion = 88B053AA26261FBE007E6E1A /* CoreDataSchool.xcdatamodel */;
+			name = CoreDataSchool.xcdatamodeld;
+			path = CoreDataSchool/CoreDataSchool.xcdatamodeld;
+			sourceTree = SOURCE_ROOT;
 			versionGroupType = wrapper.xcdatamodel;
 		};
 /* End XCVersionGroup section */

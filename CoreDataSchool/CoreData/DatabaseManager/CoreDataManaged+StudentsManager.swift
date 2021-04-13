@@ -18,7 +18,8 @@ protocol StudentsManagerType {
 extension CoreDataManager: StudentsManagerType {
     func saveStudent(_ domain: Domain.Student) {
         coreDataStack.performSave { context in
-            let student = Student(context: context)
+            let student = Student.create(in: context)
+            student.id = domain.id
             student.firstname = domain.firstname
             student.lastname = domain.lastname
             student.sex = domain.sex
