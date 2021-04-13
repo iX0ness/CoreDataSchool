@@ -22,7 +22,7 @@ protocol CoreDataStackType {
 final class CoreDataStack: CoreDataStackType {
     
     lazy var viewContextPublisher: NotificationCenter.Publisher = {
-        NotificationCenter.default.publisher(for: .NSManagedObjectContextDidSave,
+        NotificationCenter.default.publisher(for: .NSManagedObjectContextObjectsDidChange,
                                              object: mainContext)
     }()
 
@@ -32,7 +32,6 @@ final class CoreDataStack: CoreDataStackType {
     }
     
     func performSave(_ completion: @escaping (NSManagedObjectContext) -> Void) {
-        
         
         persistentContainer.performBackgroundTask { context in
             completion(context)
@@ -45,15 +44,15 @@ final class CoreDataStack: CoreDataStackType {
                     print("---Could not save---\n\(error)\n\(error.userInfo)")
                 }
             }
-            self.mainContext.perform {
-                do {
-                    print("Current thread (seems to be main): \(Thread.current)")
-                    try self.mainContext.save()
-                } catch let error as NSError {
-                    self.mainContext.rollback()
-                    print("---Could not save---\n\(error)\n\(error.userInfo)")
-                }
-            }
+//            self.mainContext.perform {
+//                do {
+//                    print("Current thread (seems to be main): \(Thread.current)")
+//                    try self.mainContext.save()
+//                } catch let error as NSError {
+//                    self.mainContext.rollback()
+//                    print("---Could not save---\n\(error)\n\(error.userInfo)")
+//                }
+//            }
         }
     }
     
@@ -87,7 +86,7 @@ final class CoreDataStack: CoreDataStackType {
 }
 
 private extension CoreDataStack {
-    func loadPersistentStore(container: NSPersistentContainer, completion: @escaping () -> Void = {}) {
+    func loadPersistentStore(container: NSPersistentContainer, completion: @escaping () -> Void = {} ) {
         container.loadPersistentStores { description, error in
             guard error == nil else {
                 fatalError("was unable to load store \(error!)")

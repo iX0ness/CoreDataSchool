@@ -40,7 +40,18 @@ struct MockCoreDataStack: CoreDataStackType {
 }
 
 struct MockDatabaseManager: StoreObservable,
-                            CitiesManagerType {
+                            CitiesManagerType,
+                            StudentsManagerType {
+    func saveStudent(_ domain: Domain.Student) {}
+    
+    func getStudents(completion: @escaping ([Domain.Student]) -> Void) {}
+    
+    func getStudent(by id: Int) -> Domain.Student { Domain.Student.mock }
+    
+    func getStudent(by firstname: String) -> [Domain.Student] { [] }
+    
+    func getStudent(in country: String) -> [Domain.Student] { [] }
+    
     
     let didPerformChanges: CurrentValueSubject<Void, Never> = CurrentValueSubject(())
     

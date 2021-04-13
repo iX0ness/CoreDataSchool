@@ -38,8 +38,8 @@ class StudentsViewController: UITableViewController, InputFormViewControllerDele
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: StudentTableViewCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
-        //        let city = viewModel.outputs.city(at: indexPath)
-        //        cell.configure(with: city)
+        let student = viewModel.outputs.student(at: indexPath)
+        cell.configure(with: student)
         return cell
     }
     
@@ -82,8 +82,8 @@ class StudentsViewController: UITableViewController, InputFormViewControllerDele
                                      lastname: lastname,
                                      email: email,
                                      sex: "M",
-                                     city: Domain.City.mock,
-                                     group: Domain.Group.mock)
-        print(firstname, " - ", lastname)
+                                     city: Domain.City.mock)
+        
+        viewModel.inputs.saveStudent(student)
     }
 }

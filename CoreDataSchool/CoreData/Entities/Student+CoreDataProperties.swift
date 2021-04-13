@@ -20,8 +20,8 @@ extension Student {
     @NSManaged public var firstname: String
     @NSManaged public var lastname: String
     @NSManaged public var sex: String
-    @NSManaged public var city: City
-    @NSManaged public var group: Group
+    @NSManaged public var city: City?
+    //@NSManaged public var group: Group
 
 }
 
@@ -34,8 +34,8 @@ extension Student {
             lastname: firstname,
             email: lastname,
             sex: sex,
-            city: city.domain,
-            group: group.domain
+            city: city?.domain
+            //group: group.domain
         )
     }
 }

@@ -17,11 +17,21 @@ protocol StudentsManagerType {
 
 extension CoreDataManager: StudentsManagerType {
     func saveStudent(_ domain: Domain.Student) {
-        
+        coreDataStack.performSave { context in
+            let student = Student(context: context)
+            student.firstname = domain.firstname
+            student.lastname = domain.lastname
+            student.sex = domain.sex
+            student.email = domain.email
+            student.city = nil
+        }
     }
     
     func getStudents(completion: @escaping ([Domain.Student]) -> Void) {
-        
+        coreDataStack.performFetch { context in
+            let students = Student.read(in: context).map { $0.domain }
+            completion(students)
+        }
     }
     
     func getStudent(by id: Int) -> Domain.Student {
@@ -43,6 +53,4 @@ extension CoreDataManager: StudentsManagerType {
          Domain.Student.mock,
         ]
     }
-    
-    
 }

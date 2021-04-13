@@ -14,8 +14,8 @@ extension Domain {
         let lastname: String
         let email: String
         let sex: String
-        let city: Domain.City
-        let group: Domain.Group
+        let city: Domain.City?
+        //let group: Domain.Group
     }
 }
 
@@ -25,8 +25,8 @@ extension Domain.Student {
               lastname: "Doe",
               email: "john.doe@gmail.com",
               sex: "M",
-              city: Domain.City.mock,
-              group: Domain.Group.mock
+              city: Domain.City.mock
+              //group: Domain.Group.mock
         )
     }
 }

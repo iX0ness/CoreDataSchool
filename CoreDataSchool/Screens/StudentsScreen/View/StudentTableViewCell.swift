@@ -35,9 +35,9 @@ class StudentTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    func configure(with city: Domain.City) {
-        textLabel?.text = city.title
-        detailTextLabel?.text = city.country
+    func configure(with student: Domain.Student) {
+        textLabel?.text = [student.firstname, student.lastname].joined(separator: " ")
+        detailTextLabel?.text = "Group"
     }
     
     private func setupLabelsTextColor() {

@@ -19,12 +19,9 @@ protocol CitiesManagerType {
 extension CoreDataManager: CitiesManagerType {
     func saveCity(_ domain: Domain.City) {
         coreDataStack.performSave { context in
-            // for i in 0...5000 {
             let city = City.create(in: context)
-            //city.title = domain.title + "\(i)"
             city.title = domain.title
             city.country = domain.title
-            //}
         }
     }
     

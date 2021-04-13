@@ -6,16 +6,20 @@
 //
 
 import Foundation
+import Combine
 
 protocol StudentsViewModelInputs {
-    func saveStudent(_ city: Domain.Student)
+    func saveStudent(_ student: Domain.Student)
 }
 
 protocol StudentsViewModelOutputs {
+    var count: Int { get }
+    var reloadData: (() -> Void)? { get set }
     var firstnameInputConfigurator: FormInputConfigurator { get }
     var lastnameInputConfigurator: FormInputConfigurator { get }
     var emailInputConfigurator: FormInputConfigurator { get }
-    var count: Int { get }
+    func student(at indexPath: IndexPath) -> Domain.Student
+    
 }
 
 protocol StudentsViewModelType {
@@ -26,11 +30,7 @@ protocol StudentsViewModelType {
 class StudentsViewModel: StudentsViewModelType,
                          StudentsViewModelInputs,
                          StudentsViewModelOutputs {
-    func saveStudent(_ city: Domain.Student) {
-    
-    }
-    
-    
+
     let firstnameInputConfigurator = FormInputConfigurator(
         placeholder: "First name",
         validator: ValidatorFactory.validatorFor(type: .requiredField(validatorType: .personAlias)),
@@ -46,14 +46,34 @@ class StudentsViewModel: StudentsViewModelType,
         validator: ValidatorFactory.validatorFor(type: .email),
         cellType: .textField)
     
-    var count: Int { 5 }
+    var reloadData: (() -> Void)?
+    var count: Int { students.count }
     
-    init(databaseManager: StoreObservable) {
-        self.databaseManager = databaseManager
+    func student(at indexPath: IndexPath) -> Domain.Student {
+        students[indexPath.row]
     }
     
-    private let databaseManager: StoreObservable
-    var students: [Domain.Student] = []
+    init(databaseManager: StoreObservable & StudentsManagerType) {
+        self.databaseManager = databaseManager
+        databaseManager.didPerformChanges
+            .sink(receiveValue: {
+                print("saved notification fired")
+                self.databaseManager.getStudents { students in
+                    self.students = students
+                }
+                self.reloadData?()
+            })
+            .store(in: &subscriptions)
+    }
+    
+    func saveStudent(_ student: Domain.Student) {
+        databaseManager.saveStudent(student)
+    }
+    
+    private var subscriptions = Set<AnyCancellable>()
+    private let databaseManager: StoreObservable & StudentsManagerType
+    private var students: [Domain.Student] = []
+    
     var inputs: StudentsViewModelInputs { self }
     var outputs: StudentsViewModelOutputs { self }
 }
