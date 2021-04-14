@@ -34,9 +34,14 @@ struct MockAppDependencyContainer: MainMenuAssembly,
 }
 
 struct MockCoreDataStack: CoreDataStackType {
-    func performSave(_ completion: @escaping (NSManagedObjectContext) -> Void) {}
-    func performFetch(_ completion: @escaping (NSManagedObjectContext) -> Void) {}
-    var viewContextPublisher: NotificationCenter.Publisher = NotificationCenter.default.publisher(for: .CKAccountChanged)
+    var mainContext: NSManagedObjectContext = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
+    
+    var backgroundContext: NSManagedObjectContext = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
+    
+    var changesPublisher: NotificationCenter.Publisher = NotificationCenter.default.publisher(for: .NSManagedObjectContextObjectsDidChange)
+    
+    
+    
 }
 
 struct MockDatabaseManager: StoreObservable,

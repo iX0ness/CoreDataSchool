@@ -26,7 +26,7 @@ class CoreDataManager: StoreObservable {
     private var subscriptions = Set<AnyCancellable>()
     
     private func subscribeOnCoreDataStackChanges() {
-        coreDataStack.viewContextPublisher.sink(receiveCompletion: {
+        coreDataStack.changesPublisher.sink(receiveCompletion: {
             if case .failure = $0 {
                 fatalError("Notification publisher crash")
             }

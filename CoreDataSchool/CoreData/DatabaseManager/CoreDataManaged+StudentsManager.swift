@@ -17,22 +17,20 @@ protocol StudentsManagerType {
 
 extension CoreDataManager: StudentsManagerType {
     func saveStudent(_ domain: Domain.Student) {
-        coreDataStack.performSave { context in
-            let student = Student.create(in: context)
-            student.id = domain.id
-            student.firstname = domain.firstname
-            student.lastname = domain.lastname
-            student.sex = domain.sex
-            student.email = domain.email
-            student.city = nil
-        }
+        let student = Student.create(in: coreDataStack.backgroundContext)
+        student.id = domain.id
+        student.firstname = domain.firstname
+        student.lastname = domain.lastname
+        student.sex = domain.sex
+        student.email = domain.email
+        student.city = nil
+        
+        coreDataStack.backgroundContext.saveIfNeeded()
     }
     
     func getStudents(completion: @escaping ([Domain.Student]) -> Void) {
-        coreDataStack.performFetch { context in
-            let students = Student.read(in: context).map { $0.domain }
-            completion(students)
-        }
+        let students = Student.read(in: coreDataStack.mainContext).map { $0.domain }
+        completion(students)
     }
     
     func getStudent(by id: Int) -> Domain.Student {

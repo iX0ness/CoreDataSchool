@@ -14,16 +14,28 @@ enum StoreType {
 }
 
 protocol CoreDataStackType {
-    func performSave(_ completion: @escaping (NSManagedObjectContext) -> Void)
-    func performFetch(_ completion: @escaping(NSManagedObjectContext) -> Void)
-    var viewContextPublisher: NotificationCenter.Publisher { get }
+    var mainContext: NSManagedObjectContext { get }
+    var backgroundContext: NSManagedObjectContext { get }
+    var changesPublisher: NotificationCenter.Publisher { get }
 }
 
 final class CoreDataStack: CoreDataStackType {
     
-    lazy var viewContextPublisher: NotificationCenter.Publisher = {
+    lazy var changesPublisher: NotificationCenter.Publisher = {
         NotificationCenter.default.publisher(for: .NSManagedObjectContextObjectsDidChange,
                                              object: mainContext)
+    }()
+    
+    lazy var mainContext: NSManagedObjectContext = {
+        let context = persistentContainer.viewContext
+        context.automaticallyMergesChangesFromParent = true
+        return context
+    }()
+    
+    lazy var backgroundContext: NSManagedObjectContext = {
+        let context = persistentContainer.newBackgroundContext()
+        context.mergePolicy = NSMergeByPropertyStoreTrumpMergePolicy
+        return context
     }()
 
     init(modelName: String, storeType: StoreType = .persistent) {
@@ -31,45 +43,13 @@ final class CoreDataStack: CoreDataStackType {
         self.storeType = storeType
     }
     
-    func performSave(_ completion: @escaping (NSManagedObjectContext) -> Void) {
-        
-        persistentContainer.performBackgroundTask { context in
-            completion(context)
-            if context.hasChanges {
-                do {
-                    print("Current thread (seems to be background): \(Thread.current)")
-                    try context.save()
-                } catch let error as NSError {
-                    context.rollback()
-                    print("---Could not save---\n\(error)\n\(error.userInfo)")
-                }
-            }
-//            self.mainContext.perform {
-//                do {
-//                    print("Current thread (seems to be main): \(Thread.current)")
-//                    try self.mainContext.save()
-//                } catch let error as NSError {
-//                    self.mainContext.rollback()
-//                    print("---Could not save---\n\(error)\n\(error.userInfo)")
-//                }
-//            }
-        }
-    }
-    
-    func performFetch(_ completion: @escaping (NSManagedObjectContext) -> Void) {
-        completion(mainContext)
-    }
+
     
     private let modelName: String
     private let storeType: StoreType
     
     private lazy var persistentContainer: NSPersistentContainer = {
         configurePersistentContainer()
-    }()
-    
-    private lazy var mainContext: NSManagedObjectContext = {
-        let context = persistentContainer.viewContext
-        return context
     }()
     
     private lazy var managedObjectModel: NSManagedObjectModel = {

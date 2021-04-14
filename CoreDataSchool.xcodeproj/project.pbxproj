@@ -49,6 +49,7 @@
 		885ED94A25B7796A00DBC630 /* FormInputConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885ED94925B7796A00DBC630 /* FormInputConfigurator.swift */; };
 		88657DF125D1F3680024DEF1 /* CoreDataManager+CitiesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88657DF025D1F3680024DEF1 /* CoreDataManager+CitiesManager.swift */; };
 		8875A7CA25D1F6F400090861 /* CoreDataModel+Managed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8875A7C925D1F6F400090861 /* CoreDataModel+Managed.swift */; };
+		8899DDCD262770C800A87DD3 /* NSManagedObjectContext+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8899DDCC262770C800A87DD3 /* NSManagedObjectContext+Extension.swift */; };
 		889ECA4725D03513007DF6E0 /* NSManagedObject+Managed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889ECA4625D03513007DF6E0 /* NSManagedObject+Managed.swift */; };
 		88A41BF526165B5D009F3E67 /* CoreDataManaged+StudentsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A41BF426165B5D009F3E67 /* CoreDataManaged+StudentsManager.swift */; };
 		88A41C01261661AB009F3E67 /* Student+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A41C00261661AB009F3E67 /* Student+Extension.swift */; };
@@ -127,6 +128,7 @@
 		885ED94925B7796A00DBC630 /* FormInputConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormInputConfigurator.swift; sourceTree = "<group>"; };
 		88657DF025D1F3680024DEF1 /* CoreDataManager+CitiesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataManager+CitiesManager.swift"; sourceTree = "<group>"; };
 		8875A7C925D1F6F400090861 /* CoreDataModel+Managed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataModel+Managed.swift"; sourceTree = "<group>"; };
+		8899DDCC262770C800A87DD3 /* NSManagedObjectContext+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectContext+Extension.swift"; sourceTree = "<group>"; };
 		889ECA4625D03513007DF6E0 /* NSManagedObject+Managed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedObject+Managed.swift"; sourceTree = "<group>"; };
 		88A41BF426165B5D009F3E67 /* CoreDataManaged+StudentsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataManaged+StudentsManager.swift"; sourceTree = "<group>"; };
 		88A41C00261661AB009F3E67 /* Student+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Student+Extension.swift"; sourceTree = "<group>"; };
@@ -213,6 +215,7 @@
 				52C7872525992408001F5B68 /* Entities */,
 				52C7872625992425001F5B68 /* CoreDataStack.swift */,
 				88B053A926261FBE007E6E1A /* CoreDataSchool.xcdatamodeld */,
+				8899DDCC262770C800A87DD3 /* NSManagedObjectContext+Extension.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -747,6 +750,7 @@
 				885ED91F25B6252C00DBC630 /* NSRegularExpression+Match.swift in Sources */,
 				52D94DFD25A250F4000D291B /* Domain+Student.swift in Sources */,
 				8875A7CA25D1F6F400090861 /* CoreDataModel+Managed.swift in Sources */,
+				8899DDCD262770C800A87DD3 /* NSManagedObjectContext+Extension.swift in Sources */,
 				88DA2D7F25C09C3200EBFC86 /* CoreDataManager.swift in Sources */,
 				52EBA2E8259F9FA500B77C10 /* MockCity.swift in Sources */,
 				52C7872D25992778001F5B68 /* AppDependencyContainer.swift in Sources */,

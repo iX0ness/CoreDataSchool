@@ -18,20 +18,19 @@ protocol CitiesManagerType {
 
 extension CoreDataManager: CitiesManagerType {
     func saveCity(_ domain: Domain.City) {
-        coreDataStack.performSave { context in
-            let city = City.create(in: context)
-            city.id = domain.id
-            city.title = domain.title
-            city.country = domain.title
-        }
+        let city = City.create(in: coreDataStack.backgroundContext)
+        city.id = domain.id
+        city.title = domain.title
+        city.country = domain.title
+        
+        coreDataStack.backgroundContext.saveIfNeeded()
     }
     
     func getCities(completion: @escaping ([Domain.City]) -> Void) {
-        coreDataStack.performFetch { context in
-            let cities = City.read(in: context).map { $0.domain }
-            completion(cities)
-        }
+        let cities = City.read(in: coreDataStack.mainContext).map { $0.domain }
+        completion(cities)
     }
+    
     
     func getCity(by id: Int) -> Domain.City {
         Domain.City.mock
@@ -52,6 +51,4 @@ extension CoreDataManager: CitiesManagerType {
          Domain.City.mock,
         ]
     }
-    
-    
 }
