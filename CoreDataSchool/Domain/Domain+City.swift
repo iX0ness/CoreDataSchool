@@ -24,9 +24,9 @@ extension Domain {
 }
 
 extension Domain.City {
-    static var mock: Domain.City {
-        .init(title: "MockCity",
-              country: "MockCountry",
-              students: [])
+    static func mock(title: String = "Berlin", country: String = "Germany", students: [Domain.Student]? = nil) -> Domain.City {
+        .init(title: title,
+            country: country,
+            students: students)
     }
 }

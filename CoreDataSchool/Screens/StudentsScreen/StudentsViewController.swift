@@ -85,7 +85,7 @@ class StudentsViewController: UITableViewController, InputFormViewControllerDele
                                      lastname: lastname,
                                      email: email,
                                      sex: "M",
-                                     city: Domain.City.mock)
+                                     city: Domain.City.mock())
         
         viewModel.inputs.saveStudent(student)
     }

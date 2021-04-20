@@ -9,6 +9,6 @@ import UIKit
 
 class AppDependencyContainer {
     lazy var databaseManager: CoreDataManager = {
-        CoreDataManager(coreDataStack: CoreDataStack(modelName: "CoreDataSchool"))
+        CoreDataManager(coreDataStack: CoreDataStack())
     }()
 }

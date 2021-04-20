@@ -38,68 +38,55 @@ final class CoreDataStack: CoreDataStackType {
         return context
     }()
 
-    init(modelName: String, storeType: StoreType = .persistent) {
-        self.modelName = modelName
+    init(storeType: StoreType = .persistent) {
         self.storeType = storeType
+        persistentContainer = NSPersistentContainer(
+            name: DataModelConfig.modelName,
+            managedObjectModel: managedObjectModel
+        )
+        
+        setup()
     }
     
 
     
-    private let modelName: String
+
     private let storeType: StoreType
-    
-    private lazy var persistentContainer: NSPersistentContainer = {
-        configurePersistentContainer()
-    }()
-    
-    private lazy var managedObjectModel: NSManagedObjectModel = {
-        guard let modelURL = Bundle.main.url(forResource: self.modelName, withExtension: "momd") else {
-            fatalError("Unable to Find Data Model")
-        }
-        
-        guard let managedObjectModel = NSManagedObjectModel(contentsOf: modelURL) else {
-            fatalError("Unable to Load Data Model")
-        }
-        
-        return managedObjectModel
-    }()
+    private let persistentContainer: NSPersistentContainer
 }
 
 private extension CoreDataStack {
-    func loadPersistentStore(container: NSPersistentContainer, completion: @escaping () -> Void = {} ) {
-        container.loadPersistentStores { description, error in
-            guard error == nil else {
-                fatalError("was unable to load store \(error!)")
+    func setup() {
+        if case .inMemory = self.storeType {
+            persistentContainer.persistentStoreDescriptions.first?.url = URL(fileURLWithPath: "/dev/null")
+        }
+        
+        persistentContainer.loadPersistentStores { description, error in
+            if let error = error {
+                print("\(Self.self) Failed loading persistent store: \(description) error: \(error)")
+                fatalError("\(Self.self) non recoverable error")
+            } else {
+                print("\(Self.self) loaded persistent store: \(description)")
             }
-            completion()
-            container.viewContext.mergePolicy = NSMergePolicy.mergeByPropertyStoreTrump
-            container.viewContext.automaticallyMergesChangesFromParent = true
         }
     }
+}
 
-    func configurePersistentContainer() -> NSPersistentContainer {
-        let persistentContainer = NSPersistentContainer(name: modelName,
-                                                        managedObjectModel: managedObjectModel)
-        
-        let containerDescription = NSPersistentStoreDescription()
-        let storeURL = getStoreURL(for: storeType).appendingPathComponent(modelName)
-        containerDescription.url = storeURL
-        
-        persistentContainer.persistentStoreDescriptions = [containerDescription]
-        loadPersistentStore(container: persistentContainer)
-        return persistentContainer
+fileprivate var managedObjectModel: NSManagedObjectModel = {
+    guard let modelURL = Bundle.main.url(
+            forResource: DataModelConfig.modelName,
+            withExtension: DataModelConfig.fileExtension) else {
+        fatalError("Unable to Find Data Model")
     }
     
-    func getStoreURL(for storeType: StoreType) -> URL {
-        switch storeType {
-        case .inMemory: return URL(fileURLWithPath: "/dev/null")
-        case .persistent: return getDocumentsURL()
-        }
+    guard let managedObjectModel = NSManagedObjectModel(contentsOf: modelURL) else {
+        fatalError("Unable to Load Data Model")
     }
     
-    func getDocumentsURL() -> URL {
-        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-        let documentsDirectory = paths[0]
-        return documentsDirectory
-    }
+    return managedObjectModel
+}()
+
+fileprivate enum DataModelConfig {
+    static let modelName = "CoreDataSchool"
+    static let fileExtension = "momd"
 }

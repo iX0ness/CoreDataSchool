@@ -33,7 +33,7 @@ extension Domain.Student {
               lastname: "Doe",
               email: "john.doe@gmail.com",
               sex: "M",
-              city: Domain.City.mock
+              city: Domain.City.mock()
         )
     }
 }

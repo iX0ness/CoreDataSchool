@@ -65,7 +65,7 @@ struct MockDatabaseManager: StoreObservable,
     func getCities(completion: @escaping ([Domain.City]) -> Void) {}
     
     func getCity(by id: Int) -> Domain.City {
-        Domain.City.mock
+        Domain.City.mock()
     }
     
     func getCity(by title: String) -> [Domain.City] { [] }

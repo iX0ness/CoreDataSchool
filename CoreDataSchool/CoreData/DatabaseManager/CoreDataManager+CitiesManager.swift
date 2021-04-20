@@ -33,22 +33,22 @@ extension CoreDataManager: CitiesManagerType {
     
     
     func getCity(by id: Int) -> Domain.City {
-        Domain.City.mock
+        Domain.City.mock()
     }
     
     func getCity(by title: String) -> [Domain.City] {
-        [Domain.City.mock,
-         Domain.City.mock,
-         Domain.City.mock,
-         Domain.City.mock,
+        [Domain.City.mock(),
+         Domain.City.mock(),
+         Domain.City.mock(),
+         Domain.City.mock(),
         ]
     }
     
     func getCity(in country: String) -> [Domain.City] {
-        [Domain.City.mock,
-         Domain.City.mock,
-         Domain.City.mock,
-         Domain.City.mock,
+        [Domain.City.mock(),
+         Domain.City.mock(),
+         Domain.City.mock(),
+         Domain.City.mock(),
         ]
     }
 }

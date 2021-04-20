@@ -18,7 +18,5 @@ extension City {
         )
     }
     
-    func configure(with domain: Domain.City) {
-        
-    }
+    func configure(with domain: Domain.City) {}
 }
