@@ -68,5 +68,4 @@ extension Managed where Self: NSManagedObject {
         requestConfigurationCompletion(fetchRequest)
         return try! context.fetch(fetchRequest)
     }
-    
 }
