@@ -208,7 +208,6 @@ class StudentTests: XCTestCase {
         let fetchedCity = FetchRequests.CityRequests.fetchCities(in: coreDataStack.backgroundContext).first!
         
         XCTAssertEqual(fetchedCity.students?.count, expectedStudentsCount, "Reletion has not been set to nil")
-        
     }
 }
 
