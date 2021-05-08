@@ -61,6 +61,7 @@
 		88B053B526261FE2007E6E1A /* Student+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B053B126261FE2007E6E1A /* Student+CoreDataProperties.swift */; };
 		88B053B626261FE2007E6E1A /* City+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B053B226261FE2007E6E1A /* City+CoreDataClass.swift */; };
 		88B053B726261FE2007E6E1A /* City+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B053B326261FE2007E6E1A /* City+CoreDataProperties.swift */; };
+		88B8D85F2646A64D00259779 /* FetchRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B8D85E2646A64D00259779 /* FetchRequests.swift */; };
 		88C0E78E25CD52C200DA9AD7 /* UIViewController+DocumentsURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C0E78D25CD52C200DA9AD7 /* UIViewController+DocumentsURL.swift */; };
 		88C3D24B25F00A66009E7D31 /* StudentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C3D24A25F00A66009E7D31 /* StudentTableViewCell.swift */; };
 		88C3D25025F00BC1009E7D31 /* AppDependencyContainer+StudentsAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C3D24F25F00BC1009E7D31 /* AppDependencyContainer+StudentsAssembly.swift */; };
@@ -141,6 +142,7 @@
 		88B053B126261FE2007E6E1A /* Student+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Student+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		88B053B226261FE2007E6E1A /* City+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "City+CoreDataClass.swift"; sourceTree = "<group>"; };
 		88B053B326261FE2007E6E1A /* City+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "City+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		88B8D85E2646A64D00259779 /* FetchRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchRequests.swift; sourceTree = "<group>"; };
 		88C0E78D25CD52C200DA9AD7 /* UIViewController+DocumentsURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+DocumentsURL.swift"; sourceTree = "<group>"; };
 		88C3D24A25F00A66009E7D31 /* StudentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentTableViewCell.swift; sourceTree = "<group>"; };
 		88C3D24F25F00BC1009E7D31 /* AppDependencyContainer+StudentsAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDependencyContainer+StudentsAssembly.swift"; sourceTree = "<group>"; };
@@ -510,6 +512,7 @@
 			children = (
 				8819538325D3215F009337EF /* CityTests.swift */,
 				88519EAA2630AFCB005D2B9F /* StudentTests.swift */,
+				88B8D85E2646A64D00259779 /* FetchRequests.swift */,
 			);
 			path = CoreDataTests;
 			sourceTree = "<group>";
@@ -785,6 +788,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8819538425D3215F009337EF /* CityTests.swift in Sources */,
+				88B8D85F2646A64D00259779 /* FetchRequests.swift in Sources */,
 				88519EAB2630AFCB005D2B9F /* StudentTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

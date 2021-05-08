@@ -37,7 +37,7 @@ class StudentTests: XCTestCase {
             coreDataStack.backgroundContext.saveIfNeeded()
         }
         
-        let count = studentsCount(in: coreDataStack.mainContext)
+        let count = FetchRequests.StudentRequests.studentsCount(in: coreDataStack.mainContext)
         
         XCTAssertEqual(count, expectedCount, "Unexpected students count found in storage")
     }
@@ -54,7 +54,7 @@ class StudentTests: XCTestCase {
             coreDataStack.backgroundContext.saveIfNeeded()
         }
         
-        let fetchedStudent = fetchStudents(in: coreDataStack.mainContext).first!
+        let fetchedStudent = FetchRequests.StudentRequests.fetchStudents(in: coreDataStack.mainContext).first!
         
         XCTAssertNil(fetchedStudent.city, "Unexpectedly student has city relation")
     }
@@ -85,7 +85,7 @@ class StudentTests: XCTestCase {
             saving.fulfill()
         }
         
-        let resultAfterSaveCount = studentsCount(in: coreDataStack.mainContext)
+        let resultAfterSaveCount = FetchRequests.StudentRequests.studentsCount(in: coreDataStack.mainContext)
         
         coreDataStack.backgroundContext.performAndWait {
             Student.delete(in: coreDataStack.backgroundContext)
@@ -93,7 +93,7 @@ class StudentTests: XCTestCase {
             deletion.fulfill()
         }
         
-        let resultAfterDeleteCount = studentsCount(in: coreDataStack.mainContext)
+        let resultAfterDeleteCount = FetchRequests.StudentRequests.studentsCount(in: coreDataStack.mainContext)
         
         wait(for: [saving, deletion], timeout: 1.5)
         
@@ -137,7 +137,7 @@ class StudentTests: XCTestCase {
             saving.fulfill()
         }
         
-        let resultAfterSaveCount = studentsCount(in: coreDataStack.mainContext)
+        let resultAfterSaveCount = FetchRequests.StudentRequests.studentsCount(in: coreDataStack.mainContext)
         
         coreDataStack.backgroundContext.performAndWait {
             Student.delete(in: coreDataStack.backgroundContext, matching: predicate)
@@ -145,21 +145,71 @@ class StudentTests: XCTestCase {
             deletion.fulfill()
         }
         
-        let resultAfterDeleteCount = studentsCount(in: coreDataStack.mainContext)
+        let resultAfterDeleteCount = FetchRequests.StudentRequests.studentsCount(in: coreDataStack.mainContext)
         
         wait(for: [saving, deletion], timeout: 1.0)
         
         XCTAssertEqual(afterSaveExpectedCount, resultAfterSaveCount, "Students has not been saved")
         XCTAssertEqual(afterDeleteExpectedCount, resultAfterDeleteCount, "Students matching predicate have not been saved")
     }
+    
+    func test_nulifyDeleteRule_studentDeletionShouldNulify_relationInRelatedCity() {
+        let saving = XCTestExpectation(description: "Saving to storage")
+        let deletion = XCTestExpectation(description: "Deleting from storage")
+        
+        let expectedStudentsCount = 2
+        
+        let berlin = City.create(in: coreDataStack.backgroundContext)
+        berlin.id = UUID()
+        berlin.title = "Berlin"
+        berlin.country = "Germany"
+        
+        let student1 = Student.create(in: coreDataStack.backgroundContext)
+        student1.id = UUID()
+        student1.firstname = "Sergey"
+        student1.lastname = "Brin"
+        student1.sex = "M"
+        student1.email = "sergey.brin@gmail.com"
+        
+        let student2 = Student.create(in: coreDataStack.backgroundContext)
+        student2.id = UUID()
+        student2.firstname = "Larry"
+        student2.lastname = "Page"
+        student2.sex = "M"
+        student2.email = "larry.page@gmail.com"
+        
+        let student3 = Student.create(in: coreDataStack.backgroundContext)
+        student3.id = UUID()
+        student3.firstname = "Marilyn"
+        student3.lastname = "Monroe"
+        student3.sex = "W"
+        student3.email = "marilyn.monroe@gmail.com"
+        
+        let sudents = Set<Student>(arrayLiteral: student1, student2, student3) as NSSet
+        
+        berlin.addToStudents(sudents)
+        
+        coreDataStack.backgroundContext.performAndWait {
+            coreDataStack.backgroundContext.saveIfNeeded()
+            saving.fulfill()
+        }
+        
+        let fetchedStudent = FetchRequests.StudentRequests.fetchStudents(in: coreDataStack.mainContext).first!
+        
+        coreDataStack.backgroundContext.performAndWait {
+            let student = coreDataStack.backgroundContext.object(with: fetchedStudent.objectID)
+            coreDataStack.backgroundContext.delete(student)
+            coreDataStack.backgroundContext.saveIfNeeded()
+            deletion.fulfill()
+        }
+        
+        wait(for: [saving, deletion], timeout: 1.0)
+        
+        let fetchedCity = FetchRequests.CityRequests.fetchCities(in: coreDataStack.backgroundContext).first!
+        
+        XCTAssertEqual(fetchedCity.students?.count, expectedStudentsCount, "Reletion has not been set to nil")
+        
+    }
 }
 
-fileprivate var studentsRequest: NSFetchRequest<Student> { Student.fetchRequest() }
 
-fileprivate func fetchStudents(in context: NSManagedObjectContext) -> [Student] {
-    return try! context.fetch(studentsRequest)
-}
-
-fileprivate func studentsCount(in context: NSManagedObjectContext) -> Int {
-    return try! context.count(for: studentsRequest)
-}

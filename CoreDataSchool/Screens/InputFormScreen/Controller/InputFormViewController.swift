@@ -8,7 +8,7 @@
 import UIKit
 import SwiftUI
 
-protocol InputFormViewControllerDelegate: class {
+protocol InputFormViewControllerDelegate: AnyObject {
     func didTapSaveFormInputs(inputs: [String: String])
 }
 

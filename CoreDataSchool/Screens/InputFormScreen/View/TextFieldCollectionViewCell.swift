@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol TextFieldCollectionViewCellDelegate: class {
+protocol TextFieldCollectionViewCellDelegate: AnyObject {
     func textFiledEditingChanged(_ textField: UITextField, with placeholder: String, and text: String)
     func textFieldDidEndEditing(_ textField: UITextField, with placeholder: String, and text: String)
 }
